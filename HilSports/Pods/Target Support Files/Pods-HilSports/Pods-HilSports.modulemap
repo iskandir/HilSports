@@ -1,0 +1,6 @@
+framework module Pods_HilSports {
+  umbrella header "Pods-HilSports-umbrella.h"
+
+  export *
+  module * { export * }
+}

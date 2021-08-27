@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,9 @@
 		3A9B1E1126D98656008AFBD6 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1026D98656008AFBD6 /* ListsView.swift */; };
 		3A9B1E1326D98663008AFBD6 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1226D98663008AFBD6 /* Error.swift */; };
 		3A9B1E1526D9866B008AFBD6 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1426D9866B008AFBD6 /* BookmarksView.swift */; };
+		3A9B1E1826D98AF7008AFBD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1726D98AF7008AFBD6 /* GoogleService-Info.plist */; };
+		3A9B1E1A26D98F5F008AFBD6 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1926D98F5F008AFBD6 /* LoginModel.swift */; };
+		4EE18682A441CD15F67825F9 /* Pods_HilSports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81B89EAD6896377912F3411 /* Pods_HilSports.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C54AD52284D65BCADC77C94 /* Pods-HilSports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HilSports.debug.xcconfig"; path = "Target Support Files/Pods-HilSports/Pods-HilSports.debug.xcconfig"; sourceTree = "<group>"; };
 		3A9B1DC226D98478008AFBD6 /* HilSports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HilSports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9B1DC526D98478008AFBD6 /* HilSportsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HilSportsApp.swift; sourceTree = "<group>"; };
 		3A9B1DC726D98478008AFBD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +81,10 @@
 		3A9B1E1026D98656008AFBD6 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
 		3A9B1E1226D98663008AFBD6 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		3A9B1E1426D9866B008AFBD6 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
+		3A9B1E1726D98AF7008AFBD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3A9B1E1926D98F5F008AFBD6 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		41458ED035C3DF0F4896143B /* Pods-HilSports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HilSports.release.xcconfig"; path = "Target Support Files/Pods-HilSports/Pods-HilSports.release.xcconfig"; sourceTree = "<group>"; };
+		E81B89EAD6896377912F3411 /* Pods_HilSports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HilSports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EE18682A441CD15F67825F9 /* Pods_HilSports.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +120,8 @@
 				3A9B1DDB26D9847B008AFBD6 /* HilSportsTests */,
 				3A9B1DE626D9847B008AFBD6 /* HilSportsUITests */,
 				3A9B1DC326D98478008AFBD6 /* Products */,
+				43F5F1AF53308972403203BA /* Pods */,
+				FABC67FFB72DDADA064E3A18 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +138,7 @@
 		3A9B1DC426D98478008AFBD6 /* HilSports */ = {
 			isa = PBXGroup;
 			children = (
+				3A9B1E1626D987FD008AFBD6 /* Login */,
 				3A9B1DFE26D98530008AFBD6 /* Map */,
 				3A9B1DF526D984D0008AFBD6 /* Menu */,
 				3A9B1DC526D98478008AFBD6 /* HilSportsApp.swift */,
@@ -135,6 +147,7 @@
 				3A9B1DCE26D9847B008AFBD6 /* Persistence.swift */,
 				3A9B1DD326D9847B008AFBD6 /* Info.plist */,
 				3A9B1DD026D9847B008AFBD6 /* HilSports.xcdatamodeld */,
+				3A9B1E1726D98AF7008AFBD6 /* GoogleService-Info.plist */,
 				3A9B1DCB26D9847B008AFBD6 /* Preview Content */,
 			);
 			path = HilSports;
@@ -202,6 +215,31 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
+		3A9B1E1626D987FD008AFBD6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3A9B1E1926D98F5F008AFBD6 /* LoginModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		43F5F1AF53308972403203BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C54AD52284D65BCADC77C94 /* Pods-HilSports.debug.xcconfig */,
+				41458ED035C3DF0F4896143B /* Pods-HilSports.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FABC67FFB72DDADA064E3A18 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E81B89EAD6896377912F3411 /* Pods_HilSports.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -209,9 +247,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A9B1DEC26D9847B008AFBD6 /* Build configuration list for PBXNativeTarget "HilSports" */;
 			buildPhases = (
+				519103A87D1CA781B89542A6 /* [CP] Check Pods Manifest.lock */,
 				3A9B1DBE26D98478008AFBD6 /* Sources */,
 				3A9B1DBF26D98478008AFBD6 /* Frameworks */,
 				3A9B1DC026D98478008AFBD6 /* Resources */,
+				20A5BF84D1E6931EDBF81B5E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -307,6 +347,7 @@
 			files = (
 				3A9B1DCD26D9847B008AFBD6 /* Preview Assets.xcassets in Resources */,
 				3A9B1DCA26D9847B008AFBD6 /* Assets.xcassets in Resources */,
+				3A9B1E1826D98AF7008AFBD6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,11 +367,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		20A5BF84D1E6931EDBF81B5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HilSports/Pods-HilSports-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HilSports/Pods-HilSports-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HilSports/Pods-HilSports-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		519103A87D1CA781B89542A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HilSports-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3A9B1DBE26D98478008AFBD6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A9B1E1A26D98F5F008AFBD6 /* LoginModel.swift in Sources */,
 				3A9B1DFD26D9851B008AFBD6 /* SideMenuViewModel.swift in Sources */,
 				3A9B1E0026D98540008AFBD6 /* CardView.swift in Sources */,
 				3A9B1E1526D9866B008AFBD6 /* BookmarksView.swift in Sources */,
@@ -502,6 +586,7 @@
 		};
 		3A9B1DED26D9847B008AFBD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C54AD52284D65BCADC77C94 /* Pods-HilSports.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -524,6 +609,7 @@
 		};
 		3A9B1DEE26D9847B008AFBD6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41458ED035C3DF0F4896143B /* Pods-HilSports.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
