@@ -6,13 +6,32 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 class LoginModel : ObservableObject {
-    var isSignedIn : Bool{}
+    let auth = Auth.auth()
+    var isSignedIn : Bool{
+        return auth.currentUser != nil
+    }
 
 
-    func signIn(email: String, password: String){}
+    func signIn(email: String, password: String){
+        auth.signIn(withEmail: email, password: password){ result, error in
+            guard result != nil, error == nil else {
+                return
+            }
+            //SignIn Success
+        }
+    }
 
-    func signUp(email: String, password: String){}
+    func signUp(email: String, password: String){
+        auth.createUser(withEmail: email, password: password) {
+          result, error in
+            guard result != nil, error == nil else {
+                return
+            }
+            //SignUp Success
+        }
+    }
     
 }

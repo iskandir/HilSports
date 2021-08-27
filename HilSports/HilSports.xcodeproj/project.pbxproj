@@ -31,6 +31,7 @@
 		3A9B1E1526D9866B008AFBD6 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1426D9866B008AFBD6 /* BookmarksView.swift */; };
 		3A9B1E1826D98AF7008AFBD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1726D98AF7008AFBD6 /* GoogleService-Info.plist */; };
 		3A9B1E1A26D98F5F008AFBD6 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1926D98F5F008AFBD6 /* LoginModel.swift */; };
+		3A9B1E1C26D990D0008AFBD6 /* MapLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1B26D990D0008AFBD6 /* MapLandingView.swift */; };
 		4EE18682A441CD15F67825F9 /* Pods_HilSports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81B89EAD6896377912F3411 /* Pods_HilSports.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		3A9B1E1426D9866B008AFBD6 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		3A9B1E1726D98AF7008AFBD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3A9B1E1926D98F5F008AFBD6 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		3A9B1E1B26D990D0008AFBD6 /* MapLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLandingView.swift; sourceTree = "<group>"; };
 		41458ED035C3DF0F4896143B /* Pods-HilSports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HilSports.release.xcconfig"; path = "Target Support Files/Pods-HilSports/Pods-HilSports.release.xcconfig"; sourceTree = "<group>"; };
 		E81B89EAD6896377912F3411 /* Pods_HilSports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HilSports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -197,6 +199,7 @@
 				3A9B1DFF26D98540008AFBD6 /* CardView.swift */,
 				3A9B1E0126D98555008AFBD6 /* EventMap.swift */,
 				3A9B1E0326D98567008AFBD6 /* FilterItem.swift */,
+				3A9B1E1B26D990D0008AFBD6 /* MapLandingView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				3A9B1E0F26D9863E008AFBD6 /* LogoutView.swift in Sources */,
 				3A9B1E1326D98663008AFBD6 /* Error.swift in Sources */,
 				3A9B1DC826D98478008AFBD6 /* ContentView.swift in Sources */,
+				3A9B1E1C26D990D0008AFBD6 /* MapLandingView.swift in Sources */,
 				3A9B1DF726D984DB008AFBD6 /* SideMenu.swift in Sources */,
 				3A9B1DF926D984EE008AFBD6 /* SideMenuHeaderView.swift in Sources */,
 				3A9B1DD226D9847B008AFBD6 /* HilSports.xcdatamodeld in Sources */,
