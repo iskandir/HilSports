@@ -1,0 +1,686 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A9B1DC626D98478008AFBD6 /* HilSportsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1DC526D98478008AFBD6 /* HilSportsApp.swift */; };
+		3A9B1DC826D98478008AFBD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1DC726D98478008AFBD6 /* ContentView.swift */; };
+		3A9B1DCA26D9847B008AFBD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9B1DC926D9847B008AFBD6 /* Assets.xcassets */; };
+		3A9B1DCD26D9847B008AFBD6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9B1DCC26D9847B008AFBD6 /* Preview Assets.xcassets */; };
+		3A9B1DCF26D9847B008AFBD6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1DCE26D9847B008AFBD6 /* Persistence.swift */; };
+		3A9B1DD226D9847B008AFBD6 /* HilSports.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1DD026D9847B008AFBD6 /* HilSports.xcdatamodeld */; };
+		3A9B1DDD26D9847B008AFBD6 /* HilSportsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1DDC26D9847B008AFBD6 /* HilSportsTests.swift */; };
+		3A9B1DE826D9847B008AFBD6 /* HilSportsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1DE726D9847B008AFBD6 /* HilSportsUITests.swift */; };
+		3A9B1DF726D984DB008AFBD6 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1DF626D984DB008AFBD6 /* SideMenu.swift */; };
+		3A9B1DF926D984EE008AFBD6 /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1DF826D984EE008AFBD6 /* SideMenuHeaderView.swift */; };
+		3A9B1DFB26D98504008AFBD6 /* SideMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1DFA26D98504008AFBD6 /* SideMenuOptionView.swift */; };
+		3A9B1DFD26D9851B008AFBD6 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1DFC26D9851B008AFBD6 /* SideMenuViewModel.swift */; };
+		3A9B1E0026D98540008AFBD6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1DFF26D98540008AFBD6 /* CardView.swift */; };
+		3A9B1E0226D98555008AFBD6 /* EventMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E0126D98555008AFBD6 /* EventMap.swift */; };
+		3A9B1E0426D98567008AFBD6 /* FilterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E0326D98567008AFBD6 /* FilterItem.swift */; };
+		3A9B1E0626D985EF008AFBD6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E0526D985EF008AFBD6 /* ProfileView.swift */; };
+		3A9B1E0926D98607008AFBD6 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E0826D98607008AFBD6 /* NotificationsView.swift */; };
+		3A9B1E0D26D9862C008AFBD6 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E0C26D9862C008AFBD6 /* MessagesView.swift */; };
+		3A9B1E0F26D9863E008AFBD6 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E0E26D9863E008AFBD6 /* LogoutView.swift */; };
+		3A9B1E1126D98656008AFBD6 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1026D98656008AFBD6 /* ListsView.swift */; };
+		3A9B1E1326D98663008AFBD6 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1226D98663008AFBD6 /* Error.swift */; };
+		3A9B1E1526D9866B008AFBD6 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1426D9866B008AFBD6 /* BookmarksView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A9B1DD926D9847B008AFBD6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A9B1DBA26D98478008AFBD6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A9B1DC126D98478008AFBD6;
+			remoteInfo = HilSports;
+		};
+		3A9B1DE426D9847B008AFBD6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A9B1DBA26D98478008AFBD6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A9B1DC126D98478008AFBD6;
+			remoteInfo = HilSports;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A9B1DC226D98478008AFBD6 /* HilSports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HilSports.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A9B1DC526D98478008AFBD6 /* HilSportsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HilSportsApp.swift; sourceTree = "<group>"; };
+		3A9B1DC726D98478008AFBD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3A9B1DC926D9847B008AFBD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A9B1DCC26D9847B008AFBD6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3A9B1DCE26D9847B008AFBD6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		3A9B1DD126D9847B008AFBD6 /* HilSports.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HilSports.xcdatamodel; sourceTree = "<group>"; };
+		3A9B1DD326D9847B008AFBD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A9B1DD826D9847B008AFBD6 /* HilSportsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HilSportsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A9B1DDC26D9847B008AFBD6 /* HilSportsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HilSportsTests.swift; sourceTree = "<group>"; };
+		3A9B1DDE26D9847B008AFBD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A9B1DE326D9847B008AFBD6 /* HilSportsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HilSportsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A9B1DE726D9847B008AFBD6 /* HilSportsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HilSportsUITests.swift; sourceTree = "<group>"; };
+		3A9B1DE926D9847B008AFBD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A9B1DF626D984DB008AFBD6 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		3A9B1DF826D984EE008AFBD6 /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
+		3A9B1DFA26D98504008AFBD6 /* SideMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionView.swift; sourceTree = "<group>"; };
+		3A9B1DFC26D9851B008AFBD6 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
+		3A9B1DFF26D98540008AFBD6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		3A9B1E0126D98555008AFBD6 /* EventMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMap.swift; sourceTree = "<group>"; };
+		3A9B1E0326D98567008AFBD6 /* FilterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterItem.swift; sourceTree = "<group>"; };
+		3A9B1E0526D985EF008AFBD6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3A9B1E0826D98607008AFBD6 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		3A9B1E0C26D9862C008AFBD6 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		3A9B1E0E26D9863E008AFBD6 /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
+		3A9B1E1026D98656008AFBD6 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
+		3A9B1E1226D98663008AFBD6 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		3A9B1E1426D9866B008AFBD6 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A9B1DBF26D98478008AFBD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A9B1DD526D9847B008AFBD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A9B1DE026D9847B008AFBD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A9B1DB926D98478008AFBD6 = {
+			isa = PBXGroup;
+			children = (
+				3A9B1DC426D98478008AFBD6 /* HilSports */,
+				3A9B1DDB26D9847B008AFBD6 /* HilSportsTests */,
+				3A9B1DE626D9847B008AFBD6 /* HilSportsUITests */,
+				3A9B1DC326D98478008AFBD6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A9B1DC326D98478008AFBD6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A9B1DC226D98478008AFBD6 /* HilSports.app */,
+				3A9B1DD826D9847B008AFBD6 /* HilSportsTests.xctest */,
+				3A9B1DE326D9847B008AFBD6 /* HilSportsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A9B1DC426D98478008AFBD6 /* HilSports */ = {
+			isa = PBXGroup;
+			children = (
+				3A9B1DFE26D98530008AFBD6 /* Map */,
+				3A9B1DF526D984D0008AFBD6 /* Menu */,
+				3A9B1DC526D98478008AFBD6 /* HilSportsApp.swift */,
+				3A9B1DC726D98478008AFBD6 /* ContentView.swift */,
+				3A9B1DC926D9847B008AFBD6 /* Assets.xcassets */,
+				3A9B1DCE26D9847B008AFBD6 /* Persistence.swift */,
+				3A9B1DD326D9847B008AFBD6 /* Info.plist */,
+				3A9B1DD026D9847B008AFBD6 /* HilSports.xcdatamodeld */,
+				3A9B1DCB26D9847B008AFBD6 /* Preview Content */,
+			);
+			path = HilSports;
+			sourceTree = "<group>";
+		};
+		3A9B1DCB26D9847B008AFBD6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3A9B1DCC26D9847B008AFBD6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3A9B1DDB26D9847B008AFBD6 /* HilSportsTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A9B1DDC26D9847B008AFBD6 /* HilSportsTests.swift */,
+				3A9B1DDE26D9847B008AFBD6 /* Info.plist */,
+			);
+			path = HilSportsTests;
+			sourceTree = "<group>";
+		};
+		3A9B1DE626D9847B008AFBD6 /* HilSportsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3A9B1DE726D9847B008AFBD6 /* HilSportsUITests.swift */,
+				3A9B1DE926D9847B008AFBD6 /* Info.plist */,
+			);
+			path = HilSportsUITests;
+			sourceTree = "<group>";
+		};
+		3A9B1DF526D984D0008AFBD6 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				3A9B1E0726D985F8008AFBD6 /* SideMenu */,
+				3A9B1DF626D984DB008AFBD6 /* SideMenu.swift */,
+				3A9B1DF826D984EE008AFBD6 /* SideMenuHeaderView.swift */,
+				3A9B1DFA26D98504008AFBD6 /* SideMenuOptionView.swift */,
+				3A9B1DFC26D9851B008AFBD6 /* SideMenuViewModel.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		3A9B1DFE26D98530008AFBD6 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				3A9B1DFF26D98540008AFBD6 /* CardView.swift */,
+				3A9B1E0126D98555008AFBD6 /* EventMap.swift */,
+				3A9B1E0326D98567008AFBD6 /* FilterItem.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		3A9B1E0726D985F8008AFBD6 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				3A9B1E0526D985EF008AFBD6 /* ProfileView.swift */,
+				3A9B1E0826D98607008AFBD6 /* NotificationsView.swift */,
+				3A9B1E0C26D9862C008AFBD6 /* MessagesView.swift */,
+				3A9B1E0E26D9863E008AFBD6 /* LogoutView.swift */,
+				3A9B1E1026D98656008AFBD6 /* ListsView.swift */,
+				3A9B1E1226D98663008AFBD6 /* Error.swift */,
+				3A9B1E1426D9866B008AFBD6 /* BookmarksView.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A9B1DC126D98478008AFBD6 /* HilSports */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A9B1DEC26D9847B008AFBD6 /* Build configuration list for PBXNativeTarget "HilSports" */;
+			buildPhases = (
+				3A9B1DBE26D98478008AFBD6 /* Sources */,
+				3A9B1DBF26D98478008AFBD6 /* Frameworks */,
+				3A9B1DC026D98478008AFBD6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HilSports;
+			productName = HilSports;
+			productReference = 3A9B1DC226D98478008AFBD6 /* HilSports.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3A9B1DD726D9847B008AFBD6 /* HilSportsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A9B1DEF26D9847B008AFBD6 /* Build configuration list for PBXNativeTarget "HilSportsTests" */;
+			buildPhases = (
+				3A9B1DD426D9847B008AFBD6 /* Sources */,
+				3A9B1DD526D9847B008AFBD6 /* Frameworks */,
+				3A9B1DD626D9847B008AFBD6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A9B1DDA26D9847B008AFBD6 /* PBXTargetDependency */,
+			);
+			name = HilSportsTests;
+			productName = HilSportsTests;
+			productReference = 3A9B1DD826D9847B008AFBD6 /* HilSportsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3A9B1DE226D9847B008AFBD6 /* HilSportsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A9B1DF226D9847B008AFBD6 /* Build configuration list for PBXNativeTarget "HilSportsUITests" */;
+			buildPhases = (
+				3A9B1DDF26D9847B008AFBD6 /* Sources */,
+				3A9B1DE026D9847B008AFBD6 /* Frameworks */,
+				3A9B1DE126D9847B008AFBD6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A9B1DE526D9847B008AFBD6 /* PBXTargetDependency */,
+			);
+			name = HilSportsUITests;
+			productName = HilSportsUITests;
+			productReference = 3A9B1DE326D9847B008AFBD6 /* HilSportsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A9B1DBA26D98478008AFBD6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					3A9B1DC126D98478008AFBD6 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					3A9B1DD726D9847B008AFBD6 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 3A9B1DC126D98478008AFBD6;
+					};
+					3A9B1DE226D9847B008AFBD6 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 3A9B1DC126D98478008AFBD6;
+					};
+				};
+			};
+			buildConfigurationList = 3A9B1DBD26D98478008AFBD6 /* Build configuration list for PBXProject "HilSports" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A9B1DB926D98478008AFBD6;
+			productRefGroup = 3A9B1DC326D98478008AFBD6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A9B1DC126D98478008AFBD6 /* HilSports */,
+				3A9B1DD726D9847B008AFBD6 /* HilSportsTests */,
+				3A9B1DE226D9847B008AFBD6 /* HilSportsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A9B1DC026D98478008AFBD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A9B1DCD26D9847B008AFBD6 /* Preview Assets.xcassets in Resources */,
+				3A9B1DCA26D9847B008AFBD6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A9B1DD626D9847B008AFBD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A9B1DE126D9847B008AFBD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A9B1DBE26D98478008AFBD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A9B1DFD26D9851B008AFBD6 /* SideMenuViewModel.swift in Sources */,
+				3A9B1E0026D98540008AFBD6 /* CardView.swift in Sources */,
+				3A9B1E1526D9866B008AFBD6 /* BookmarksView.swift in Sources */,
+				3A9B1DFB26D98504008AFBD6 /* SideMenuOptionView.swift in Sources */,
+				3A9B1E0426D98567008AFBD6 /* FilterItem.swift in Sources */,
+				3A9B1E1126D98656008AFBD6 /* ListsView.swift in Sources */,
+				3A9B1E0D26D9862C008AFBD6 /* MessagesView.swift in Sources */,
+				3A9B1E0626D985EF008AFBD6 /* ProfileView.swift in Sources */,
+				3A9B1DCF26D9847B008AFBD6 /* Persistence.swift in Sources */,
+				3A9B1E0F26D9863E008AFBD6 /* LogoutView.swift in Sources */,
+				3A9B1E1326D98663008AFBD6 /* Error.swift in Sources */,
+				3A9B1DC826D98478008AFBD6 /* ContentView.swift in Sources */,
+				3A9B1DF726D984DB008AFBD6 /* SideMenu.swift in Sources */,
+				3A9B1DF926D984EE008AFBD6 /* SideMenuHeaderView.swift in Sources */,
+				3A9B1DD226D9847B008AFBD6 /* HilSports.xcdatamodeld in Sources */,
+				3A9B1E0926D98607008AFBD6 /* NotificationsView.swift in Sources */,
+				3A9B1DC626D98478008AFBD6 /* HilSportsApp.swift in Sources */,
+				3A9B1E0226D98555008AFBD6 /* EventMap.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A9B1DD426D9847B008AFBD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A9B1DDD26D9847B008AFBD6 /* HilSportsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A9B1DDF26D9847B008AFBD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A9B1DE826D9847B008AFBD6 /* HilSportsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A9B1DDA26D9847B008AFBD6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A9B1DC126D98478008AFBD6 /* HilSports */;
+			targetProxy = 3A9B1DD926D9847B008AFBD6 /* PBXContainerItemProxy */;
+		};
+		3A9B1DE526D9847B008AFBD6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A9B1DC126D98478008AFBD6 /* HilSports */;
+			targetProxy = 3A9B1DE426D9847B008AFBD6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3A9B1DEA26D9847B008AFBD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3A9B1DEB26D9847B008AFBD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A9B1DED26D9847B008AFBD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"HilSports/Preview Content\"";
+				DEVELOPMENT_TEAM = UL8QYY28QS;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = HilSports/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ApixDev.HilSports;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3A9B1DEE26D9847B008AFBD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"HilSports/Preview Content\"";
+				DEVELOPMENT_TEAM = UL8QYY28QS;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = HilSports/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ApixDev.HilSports;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3A9B1DF026D9847B008AFBD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UL8QYY28QS;
+				INFOPLIST_FILE = HilSportsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ApixDev.HilSportsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HilSports.app/HilSports";
+			};
+			name = Debug;
+		};
+		3A9B1DF126D9847B008AFBD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UL8QYY28QS;
+				INFOPLIST_FILE = HilSportsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ApixDev.HilSportsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HilSports.app/HilSports";
+			};
+			name = Release;
+		};
+		3A9B1DF326D9847B008AFBD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UL8QYY28QS;
+				INFOPLIST_FILE = HilSportsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ApixDev.HilSportsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HilSports;
+			};
+			name = Debug;
+		};
+		3A9B1DF426D9847B008AFBD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UL8QYY28QS;
+				INFOPLIST_FILE = HilSportsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ApixDev.HilSportsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HilSports;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A9B1DBD26D98478008AFBD6 /* Build configuration list for PBXProject "HilSports" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A9B1DEA26D9847B008AFBD6 /* Debug */,
+				3A9B1DEB26D9847B008AFBD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A9B1DEC26D9847B008AFBD6 /* Build configuration list for PBXNativeTarget "HilSports" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A9B1DED26D9847B008AFBD6 /* Debug */,
+				3A9B1DEE26D9847B008AFBD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A9B1DEF26D9847B008AFBD6 /* Build configuration list for PBXNativeTarget "HilSportsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A9B1DF026D9847B008AFBD6 /* Debug */,
+				3A9B1DF126D9847B008AFBD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A9B1DF226D9847B008AFBD6 /* Build configuration list for PBXNativeTarget "HilSportsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A9B1DF326D9847B008AFBD6 /* Debug */,
+				3A9B1DF426D9847B008AFBD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3A9B1DD026D9847B008AFBD6 /* HilSports.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3A9B1DD126D9847B008AFBD6 /* HilSports.xcdatamodel */,
+			);
+			currentVersion = 3A9B1DD126D9847B008AFBD6 /* HilSports.xcdatamodel */;
+			path = HilSports.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3A9B1DBA26D98478008AFBD6 /* Project object */;
+}
