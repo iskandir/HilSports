@@ -4,34 +4,35 @@ import CoreData
 
 
 struct ContentView: View {
+    @State var showLoginView : Bool = true
     
     var body: some View {
         VStack {
-          Spacer()
-
-          // 2
           Image("header_image")
             .resizable()
             .aspectRatio(contentMode: .fit)
 
-          Text("Welcome to Ellifit!")
+          Text("Welcome to HilFit!")
             .fontWeight(.black)
             .foregroundColor(Color(.systemIndigo))
             .font(.largeTitle)
             .multilineTextAlignment(.center)
 
-          Text("Empower your elliptical workouts by tracking every move.")
+          Text("Empower your life!")
             .fontWeight(.light)
             .multilineTextAlignment(.center)
             .padding()
-
-          Spacer()
-
-          // 3
-          Button("Sign in with Google") {
-            print("Do smth")
+            if showLoginView {
+                LoginView()
+                    .animation(.easeIn)
+            } else {
+          Button("Sign in") {
+            self.showLoginView = true
           }
           .buttonStyle(AuthenticationButtonStyle())
+            Spacer()
+            Spacer()
+            }
         }
     }
 }
