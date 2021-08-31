@@ -33,6 +33,8 @@
 		3A9B1E1A26D98F5F008AFBD6 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1926D98F5F008AFBD6 /* LoginModel.swift */; };
 		3A9B1E1C26D990D0008AFBD6 /* MapLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1B26D990D0008AFBD6 /* MapLandingView.swift */; };
 		3A9B1E2026DBACCD008AFBD6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1F26DBACCD008AFBD6 /* LoginView.swift */; };
+		3A9B1E2326DCA0CF008AFBD6 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E2226DCA0CF008AFBD6 /* RegistrationView.swift */; };
+		3A9B1E2626DE6848008AFBD6 /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E2526DE6848008AFBD6 /* RegistrationModel.swift */; };
 		4EE18682A441CD15F67825F9 /* Pods_HilSports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81B89EAD6896377912F3411 /* Pods_HilSports.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +89,8 @@
 		3A9B1E1926D98F5F008AFBD6 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		3A9B1E1B26D990D0008AFBD6 /* MapLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLandingView.swift; sourceTree = "<group>"; };
 		3A9B1E1F26DBACCD008AFBD6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3A9B1E2226DCA0CF008AFBD6 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		3A9B1E2526DE6848008AFBD6 /* RegistrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
 		41458ED035C3DF0F4896143B /* Pods-HilSports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HilSports.release.xcconfig"; path = "Target Support Files/Pods-HilSports/Pods-HilSports.release.xcconfig"; sourceTree = "<group>"; };
 		E81B89EAD6896377912F3411 /* Pods_HilSports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HilSports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -142,7 +146,7 @@
 		3A9B1DC426D98478008AFBD6 /* HilSports */ = {
 			isa = PBXGroup;
 			children = (
-				3A9B1E1626D987FD008AFBD6 /* Login */,
+				3A9B1E2126DCA0BA008AFBD6 /* UserAccess */,
 				3A9B1DFE26D98530008AFBD6 /* Map */,
 				3A9B1DF526D984D0008AFBD6 /* Menu */,
 				3A9B1DC526D98478008AFBD6 /* HilSportsApp.swift */,
@@ -227,6 +231,24 @@
 				3A9B1E1F26DBACCD008AFBD6 /* LoginView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		3A9B1E2126DCA0BA008AFBD6 /* UserAccess */ = {
+			isa = PBXGroup;
+			children = (
+				3A9B1E2426DCA0DA008AFBD6 /* Registration */,
+				3A9B1E1626D987FD008AFBD6 /* Login */,
+			);
+			path = UserAccess;
+			sourceTree = "<group>";
+		};
+		3A9B1E2426DCA0DA008AFBD6 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				3A9B1E2226DCA0CF008AFBD6 /* RegistrationView.swift */,
+				3A9B1E2526DE6848008AFBD6 /* RegistrationModel.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 		43F5F1AF53308972403203BA /* Pods */ = {
@@ -429,8 +451,10 @@
 				3A9B1E1126D98656008AFBD6 /* ListsView.swift in Sources */,
 				3A9B1E0D26D9862C008AFBD6 /* MessagesView.swift in Sources */,
 				3A9B1E0626D985EF008AFBD6 /* ProfileView.swift in Sources */,
+				3A9B1E2626DE6848008AFBD6 /* RegistrationModel.swift in Sources */,
 				3A9B1DCF26D9847B008AFBD6 /* Persistence.swift in Sources */,
 				3A9B1E0F26D9863E008AFBD6 /* LogoutView.swift in Sources */,
+				3A9B1E2326DCA0CF008AFBD6 /* RegistrationView.swift in Sources */,
 				3A9B1E1326D98663008AFBD6 /* Error.swift in Sources */,
 				3A9B1DC826D98478008AFBD6 /* ContentView.swift in Sources */,
 				3A9B1E1C26D990D0008AFBD6 /* MapLandingView.swift in Sources */,

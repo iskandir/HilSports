@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var loginModel : LoginModel
+    
     @State private var username = ""
     @State private var password = ""
+    
+    @State var showAlert = false
     var body: some View {
-        HStack{
+        HStack(alignment: .center){
             VStack{
                 Text("Login")
+                    .font(.title)
             } .padding(.horizontal)
+            .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
 
             VStack{
                 HStack{
@@ -35,10 +41,22 @@ struct LoginView: View {
                 }
                 .padding(.horizontal)
                 .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                
+                Button("SignIn"){
+                    guard !username.isEmpty, !password.isEmpty else {
+                        showAlert = true
+                        return
+                    }
+                    loginModel.signIn(username: username, password: password)
+                    
+                    
+                    print("test")
+                }.buttonStyle(AuthenticationButtonStyle())
+                .alert(isPresented: self.$showAlert){
+                    Alert(title: Text("Username and password needs to be filled"))
+                }
             }
-        Spacer()
         }
-        
     }
 }
 

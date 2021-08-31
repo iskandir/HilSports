@@ -15,8 +15,8 @@ class LoginModel : ObservableObject {
     }
 
 
-    func signIn(email: String, password: String){
-        auth.signIn(withEmail: email, password: password){ result, error in
+    func signIn(username: String, password: String){
+        auth.signIn(withEmail: username, password: password){ result, error in
             guard result != nil, error == nil else {
                 return
             }
@@ -24,14 +24,6 @@ class LoginModel : ObservableObject {
         }
     }
 
-    func signUp(email: String, password: String){
-        auth.createUser(withEmail: email, password: password) {
-          result, error in
-            guard result != nil, error == nil else {
-                return
-            }
-            //SignUp Success
-        }
-    }
+
     
 }
