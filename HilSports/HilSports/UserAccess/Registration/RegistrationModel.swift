@@ -7,18 +7,16 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseFirestore
 
 class RegistrationModel : ObservableObject {
-    let auth = Auth.auth()
+    private var db = Firestore.firestore()
     
-    
-    func signUp(email: String, password: String){
-        auth.createUser(withEmail: email, password: password) {
-          result, error in
-            guard result != nil, error == nil else {
-                return
-            }
-            //SignUp Success
+    func addUser(name : String, email : String, password : String){
+        do {
+            _ = try db.collection("user").addDocument(data: ["email": email, "name" : name, "password" : password])
+        } catch {
+            print(error.localizedDescription)
         }
     }
 }

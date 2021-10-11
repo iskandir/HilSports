@@ -9,8 +9,8 @@ target 'HilSports' do
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'GoogleSignIn'
+pod 'Firebase/Firestore'
 
-  # Pods for Ellifit
 end
 
 

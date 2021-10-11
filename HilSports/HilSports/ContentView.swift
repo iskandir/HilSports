@@ -4,8 +4,8 @@ import CoreData
 
 
 struct ContentView: View {
-    @State var showLoginView : Bool = true
-    @State var showRegistrationView : Bool = false
+    @State var showLoginView : Bool = false
+    @State var showRegistrationView : Bool = true
     @EnvironmentObject var loginModel: LoginModel
     
     

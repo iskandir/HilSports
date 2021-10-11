@@ -47,7 +47,7 @@ struct LoginView: View {
                         showAlert = true
                         return
                     }
-                    loginModel.signIn(username: username, password: password)
+                    //loginModel.signIn(username: username, password: password)
                     
                     
                     print("test")
