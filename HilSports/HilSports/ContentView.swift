@@ -4,76 +4,106 @@ import CoreData
 
 
 struct ContentView: View {
-    @State var showLoginView : Bool = false
-    @State var showRegistrationView : Bool = true
-    @EnvironmentObject var loginModel: LoginModel
     
+    @State var showLoginView : Bool = false
+    @EnvironmentObject var loginModel: LoginModel
+    @State var loggedUser : Bool = false
     
     var body: some View {
-        VStack {
-          Image("header_image")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
+        if loggedUser == true {
+            MapLandingView()
+        } else {
+            NavigationView{
+                VStack {
+                    WelcomeText()
+                    
+                    if showLoginView {
+                        LoginView(showLoginView: $showLoginView, loggedUser: $loggedUser)
+                            .animation(.easeIn)
+                    } else {
+                        HStack{
+                            Button("Sign in") {
+                                self.showLoginView = true
+                            }.buttonStyle(AuthenticationButtonStyle(bgColor: .green))
+                            
+                            NavigationLink(destination: RegistrationView())
+                            {
+                                Text("Registration")
+                            }.buttonStyle(RegistrationButtonStyle(bgColor: .gray))
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+//Button style for AuthenticationButton
+struct AuthenticationButtonStyle: ButtonStyle {
+    var bgColor: Color
+    
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .padding(20)
+            .background(
+                ZStack{
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .shadow(color: .white, radius: configuration.isPressed ? 7 : 10, x: configuration.isPressed ? -5: -15, y: configuration.isPressed ? -5: -15)
+                        .shadow(color: .black, radius: configuration.isPressed ? 7 : 10, x: configuration.isPressed ? 5: 15, y: configuration.isPressed ? 5: 15)
+                        .blendMode(.overlay)
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .fill(bgColor)
+                }
+            ).scaleEffect(configuration.isPressed ? 0.95: 1)
+            .foregroundColor(.white)
+            .animation(.spring())
+        
+    }
+}
 
-          Text("Welcome to HilFit!")
+//Button style for RegistrationButton
+struct RegistrationButtonStyle : ButtonStyle {
+    var bgColor: Color
+    
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .padding(20)
+            .background(
+                ZStack{
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .shadow(color: .white, radius: configuration.isPressed ? 7 : 10, x: configuration.isPressed ? -5: -15, y: configuration.isPressed ? -5: -15)
+                        .shadow(color: .black, radius: configuration.isPressed ? 7 : 10, x: configuration.isPressed ? 5: 15, y: configuration.isPressed ? 5: 15)
+                        .blendMode(.overlay)
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .fill(bgColor)
+                }
+            ).scaleEffect(configuration.isPressed ? 0.95: 1)
+            .foregroundColor(.white)
+            .animation(.spring())
+        
+    }
+}
+
+struct WelcomeText : View {
+    var body: some View {
+        
+        Text("Welcome to HilFit!")
             .fontWeight(.black)
             .foregroundColor(Color(.systemGreen))
             .font(.largeTitle)
             .multilineTextAlignment(.center)
-
-          Text("Empower your life!")
+        
+        Text("Empower your life!")
             .fontWeight(.light)
             .multilineTextAlignment(.center)
             .padding()
-            if showLoginView {
-                LoginView()
-                    .animation(.easeIn)
-            } else if showRegistrationView {
-                NavigationLink(
-                    destination: RegistrationView(),
-                    label: {
-                       Text("Registration")
-                    })
-                
-                /*RegistrationView()
-                    .animation(.easeIn)*/
-            } else {
-                VStack{
-                    Button("Sign in") {
-                        self.showLoginView = true
-                    }
-                    .buttonStyle(AuthenticationButtonStyle())
-                    Button("Registration") {
-                        self.showRegistrationView = true
-                    }
-                    .buttonStyle(RegistrationButtonStyle())
-                    }
-            }
-            Spacer()
-            Spacer()
-        }
-    }
-}
-struct AuthenticationButtonStyle: ButtonStyle {
-  func makeBody(configuration: Self.Configuration) -> some View {
-    configuration.label
-      .foregroundColor(.white)
-      .padding()
-      .frame(maxWidth: .infinity)
-      .background(Color(.systemGreen))
-      .cornerRadius(12)
-      .padding()
-  }
-}
-
-struct RegistrationButtonStyle : ButtonStyle {
-    func makeBody(configuration: Self.Configuration) -> some View {
-        configuration.label
-            .foregroundColor(.white)
-            .padding()
-            .frame(maxWidth: .infinity)
-            .background(Color(.systemGray2))
-            .cornerRadius(12)
-            .padding()
+        Image("hallo")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 150, height: 150)
+            .clipped()
+            .cornerRadius(150)
+            .padding(.bottom, 75)
+        
     }
 }
