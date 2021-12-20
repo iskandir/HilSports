@@ -12,9 +12,9 @@ import FirebaseFirestore
 class RegistrationModel : ObservableObject {
     private var db = Firestore.firestore()
     
-    func addUser(name : String, email : String, password : String){
+    func addUser(username : String, email : String, password : String){
         do {
-            _ = try db.collection("user").addDocument(data: ["email": email, "name" : name, "password" : password])
+            _ = try db.collection("user").addDocument(data: ["email": email, "username" : username, "password" : password])
         } catch {
             print(error.localizedDescription)
         }

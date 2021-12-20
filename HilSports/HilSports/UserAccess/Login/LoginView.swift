@@ -6,7 +6,12 @@
 //
 
 import SwiftUI
-
+/**
+ LoginView for user login.
+ binding variable for ContentView :
+ loggedUser = displays if the user is already logged correctly
+ showLoginViev = displays if the LoginView needs to been shown
+ */
 struct LoginView: View {
     @EnvironmentObject var loginModel : LoginModel
     @Binding var showLoginView : Bool
@@ -34,6 +39,7 @@ struct LoginView: View {
                         showAlert = true
                         return
                     }
+                    //print(loginModel.fetchData())
                     loggedUser = true
                     print("login")
                 } label: {

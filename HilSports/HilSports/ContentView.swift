@@ -4,9 +4,9 @@ import CoreData
 
 
 struct ContentView: View {
-    
-    @State var showLoginView : Bool = false
+
     @EnvironmentObject var loginModel: LoginModel
+    @State var showLoginView : Bool = false
     @State var loggedUser : Bool = false
     
     var body: some View {

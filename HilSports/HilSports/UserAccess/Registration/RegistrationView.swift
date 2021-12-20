@@ -7,14 +7,20 @@
 
 import SwiftUI
 
+/**
+ View for user registration.
+ Variables are email, username, password and password again
+ */
+
 struct RegistrationView: View {
     @EnvironmentObject var registrationModel : RegistrationModel
-    
     @State private var email : String = ""
     @State private var username : String = ""
     @State private var password : String = ""
     @State private var passwordAgain : String = ""
-    
+    /**
+     Double check which OS is the latest / which is most used os
+     */
     var body: some View {
         if #available(iOS 15.0, *) {
             VStack(alignment: .leading){
@@ -55,6 +61,8 @@ struct RegistrationView: View {
                 
                 Button {
                     //TODO:- add action
+                    
+                    
                     print("Registration")
                 } label: {
                     ZStack {
@@ -83,7 +91,10 @@ struct RegistrationView: View {
         }
     }
 }
-
+/**
+ FlatGlassView is a ViewModifier for the registrationView.
+ 
+ */
 struct FlatGlassView : ViewModifier {
     func body(content: Content) -> some View {
         if #available(iOS 15.0, *) {
