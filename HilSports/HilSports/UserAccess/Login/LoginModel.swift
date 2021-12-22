@@ -29,6 +29,15 @@ class LoginModel : ObservableObject {
             }
         }
     }
+    func userLogin(email: String, password: String){
+        Auth.auth().signIn(withEmail: email, password: password) {(result, error) in
+            if error != nil {
+                print("Error writing document: \(String(describing: error))")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+    }
 }
 
 struct User: Codable, Identifiable {

@@ -13,11 +13,13 @@ import SwiftUI
  */
 
 struct RegistrationView: View {
-    @EnvironmentObject var registrationModel : RegistrationModel
     @State private var email : String = ""
     @State private var username : String = ""
     @State private var password : String = ""
     @State private var passwordAgain : String = ""
+    @State private var showAlert : Bool = false
+    @StateObject var viewModel = RegistrationViewModel()
+    
     /**
      Double check which OS is the latest / which is most used os
      */
@@ -60,10 +62,18 @@ struct RegistrationView: View {
                     .font(.footnote)
                 
                 Button {
-                    //TODO:- add action
-                    
+                    guard !passwordAgain.isEmpty, !password.isEmpty else {
+                        showAlert = true
+                        print("Password one and password two are not the same")
+                        return
+                    }
+                
+                    let newUser = RegistrationModel(username: self.username, password: self.password, email: self.email)
+                    viewModel.signUp(registrationUser: newUser)
                     
                     print("Registration")
+                
+                    
                 } label: {
                     ZStack {
                         Text("SIGN UP")
@@ -73,6 +83,8 @@ struct RegistrationView: View {
                             .cornerRadius(14)
                             .padding(.bottom, 8)
                     }
+                }.alert(isPresented: self.$showAlert){
+                    Alert(title: Text("Passwords are not the same"))
                 }
                 
             }

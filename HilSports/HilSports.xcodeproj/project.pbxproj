@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A8305832773294800E17897 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8305822773294800E17897 /* RegistrationViewModel.swift */; };
 		3A9B1DC626D98478008AFBD6 /* HilSportsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1DC526D98478008AFBD6 /* HilSportsApp.swift */; };
 		3A9B1DC826D98478008AFBD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1DC726D98478008AFBD6 /* ContentView.swift */; };
 		3A9B1DCA26D9847B008AFBD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9B1DC926D9847B008AFBD6 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		1C54AD52284D65BCADC77C94 /* Pods-HilSports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HilSports.debug.xcconfig"; path = "Target Support Files/Pods-HilSports/Pods-HilSports.debug.xcconfig"; sourceTree = "<group>"; };
+		3A8305822773294800E17897 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		3A9B1DC226D98478008AFBD6 /* HilSports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HilSports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9B1DC526D98478008AFBD6 /* HilSportsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HilSportsApp.swift; sourceTree = "<group>"; };
 		3A9B1DC726D98478008AFBD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			children = (
 				3A9B1E2226DCA0CF008AFBD6 /* RegistrationView.swift */,
 				3A9B1E2526DE6848008AFBD6 /* RegistrationModel.swift */,
+				3A8305822773294800E17897 /* RegistrationViewModel.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				3A9B1DCF26D9847B008AFBD6 /* Persistence.swift in Sources */,
 				3A9B1E0F26D9863E008AFBD6 /* LogoutView.swift in Sources */,
 				3A9B1E2326DCA0CF008AFBD6 /* RegistrationView.swift in Sources */,
+				3A8305832773294800E17897 /* RegistrationViewModel.swift in Sources */,
 				3A9B1E1326D98663008AFBD6 /* Error.swift in Sources */,
 				3A9B1DC826D98478008AFBD6 /* ContentView.swift in Sources */,
 				3A9B1E1C26D990D0008AFBD6 /* MapLandingView.swift in Sources */,
