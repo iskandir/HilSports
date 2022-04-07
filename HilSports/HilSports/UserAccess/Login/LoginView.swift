@@ -39,9 +39,9 @@ struct LoginView: View {
                         showAlert = true
                         return
                     }
-                    //print(loginModel.fetchData())
                     loggedUser = true
                     print("login")
+                    
                 } label: {
                     ZStack {
                         Text("SIGN IN")
@@ -98,14 +98,17 @@ struct GlassView : ViewModifier {
                 .padding()
                 .frame(height: 50)
                 .background(.ultraThinMaterial)
-            
                 .cornerRadius(14)
-            
+                .shadow(color: .white.opacity(0.65), radius: 1, x: -1, y: -2)
+                .shadow(color: .black.opacity(0.65), radius: 2, x: 2, y: 2)
         } else {
+            // Fallback on earlier versions
             content
                 .padding()
                 .frame(height: 50)
                 .cornerRadius(14)
+                .shadow(color: .white, radius: 3, x: -3, y: -3)
+                .shadow(color: .black, radius: 3, x: 3, y: 3)
             
         }
     }
