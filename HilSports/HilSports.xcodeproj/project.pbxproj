@@ -123,6 +123,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A4961AC28008387001A6A60 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		3A9B1DB926D98478008AFBD6 = {
 			isa = PBXGroup;
 			children = (
@@ -229,8 +236,8 @@
 		3A9B1E1626D987FD008AFBD6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				3A9B1E1926D98F5F008AFBD6 /* LoginModel.swift */,
 				3A9B1E1F26DBACCD008AFBD6 /* LoginView.swift */,
+				3A9B1E1926D98F5F008AFBD6 /* LoginModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -238,6 +245,7 @@
 		3A9B1E2126DCA0BA008AFBD6 /* UserAccess */ = {
 			isa = PBXGroup;
 			children = (
+				3A4961AC28008387001A6A60 /* Firebase */,
 				3A9B1E2426DCA0DA008AFBD6 /* Registration */,
 				3A9B1E1626D987FD008AFBD6 /* Login */,
 			);

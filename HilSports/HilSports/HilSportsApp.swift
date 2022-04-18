@@ -26,6 +26,7 @@ struct HilSportsApp: App {
 
 extension HilSportsApp {
     private func setupAuthentication(){
+        print("FirebaseApp konfiguriert")
         FirebaseApp.configure()
     }
 }

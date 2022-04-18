@@ -9,6 +9,7 @@ struct ContentView: View {
     @State var showLoginView : Bool = false
     @State var loggedUser : Bool = false
     
+    
     var body: some View {
         if loggedUser == true {
             MapLandingView()

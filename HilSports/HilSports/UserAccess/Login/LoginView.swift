@@ -35,6 +35,7 @@ struct LoginView: View {
                 .padding()
                 
                 Button {
+                    //TODO: Check if user is in database !!
                     guard !username.isEmpty, !password.isEmpty else {
                         showAlert = true
                         return

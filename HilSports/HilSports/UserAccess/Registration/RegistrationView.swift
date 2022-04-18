@@ -17,21 +17,27 @@ struct RegistrationView: View {
     @State private var username : String = ""
     @State private var password : String = ""
     @State private var passwordAgain : String = ""
-    @State private var showAlert : Bool = false
+    
+    //Alert Identifier
+    @State private var usernameAlert : Bool = false
+    @State private var pwEmptyAlert : Bool = false
+    @State private var pwNotSameAlert : Bool = false
+    @State private var showRegistrationAlert : Bool = false
+    @State private var userDoesExist : Bool = true
     @StateObject var viewModel = RegistrationViewModel()
     
     /**
      Double check which OS is the latest / which is most used os
      */
-    var body: some View {
+    var body: some View { 
         if #available(iOS 15.0, *) {
-            VStack(alignment: .leading){
+            VStack(){
                 Text("Registration")
                     .font(.largeTitle)
                     .bold()
                     .frame(maxWidth : .infinity, alignment: .leading)
                     .padding(.top)
-                    .foregroundColor(Color.primary.opacity(0.4))
+                    .foregroundColor(Color.primary.opacity(0.7))
                 
                 Text("Create a new account")
                     .font(.callout)
@@ -58,35 +64,95 @@ struct RegistrationView: View {
                 
                 Divider().padding()
                 
-                Text("By signing up you accept the **Terms of Service** and **Privacy Policy**")
+                Text("By signing up you accept the \n**Terms of Service** and **Privacy Policy**")
                     .font(.footnote)
+                    .fixedSize(horizontal: false, vertical: true)
                 
                 Button {
-                    guard !passwordAgain.isEmpty, !password.isEmpty else {
-                        showAlert = true
-                        print("Password one and password two are not the same")
+                    guard !username.isEmpty else{
+                        usernameAlert = true
+                        return
+                    }
+                    guard !password.isEmpty else {
+                        pwEmptyAlert = true
+                        return
+                    }
+                    guard password == passwordAgain else {
+                        pwNotSameAlert = true
+                        return
+                    }
+
+                    
+                    
+                    let test: (String) -> Bool = viewModel.doesUserExist
+                    userDoesExist = test(email)
+                    print("UserDoesExist ist: \(userDoesExist)")
+                    
+                    /*guard usernameAlert || pwEmptyAlert || pwNotSameAlert else {
+                        print("#####userdoesExist started#####")
+                        let test: (String) -> Bool = viewModel.doesUserExist
+                        userDoesExist = test(email)
                         return
                     }
                 
-                    let newUser = RegistrationModel(username: self.username, password: self.password, email: self.email)
-                    viewModel.signUp(registrationUser: newUser)
-                    
-                    print("Registration")
-                
-                    
+                    if !userDoesExist
+                    {
+                        let newUser = RegistrationModel(username: self.username, password: self.password, email: self.email)
+                        showRegistrationAlert = viewModel.signUp(registrationUser: newUser)
+                        print("Registration sucessful")
+                   
+                    } else {
+                        showRegistrationAlert = true
+                        print("User is already in db")
+                        return
+                   
+                    }*/
                 } label: {
                     ZStack {
                         Text("SIGN UP")
                             .bold()
+                            .font(.subheadline)
                             .frame(maxWidth: .infinity, maxHeight: 50)
+                            .foregroundColor(.black)
                             .background(.thickMaterial)
                             .cornerRadius(14)
                             .padding(.bottom, 8)
                     }
-                }.alert(isPresented: self.$showAlert){
-                    Alert(title: Text("Not all fields are filled!"))
+                }.alert(isPresented: self.$pwEmptyAlert){
+                    Alert(title: Text("Password field is Empty!"))
                 }
-                
+                .alert(isPresented: self.$showRegistrationAlert){
+                    Alert(
+                        title: Text("Title"),
+                        message: Text("Message"),
+                        dismissButton: .default(Text("Okay"), action: {
+                        })
+                    )
+                }
+                .alert(isPresented: self.$pwNotSameAlert){
+                    Alert(
+                        title: Text("Passwords are not the same"),
+                        message: Text("Message"),
+                        dismissButton: .default(Text("Okay"), action: {
+                        })
+                    )
+                }
+                .alert(isPresented: self.$usernameAlert){
+                    Alert(
+                        title: Text("Username needs to be filled"),
+                        message: Text("Message"),
+                        dismissButton: .default(Text("Okay"), action: {
+                        })
+                    )
+                }
+                .alert(isPresented: self.$userDoesExist){
+                    Alert(
+                        title: Text("User does exist in db"),
+                        message: Text("Message"),
+                        dismissButton: .default(Text("Okay"), action: {
+                        })
+                    )
+                }
             }
             .padding()
             .background(.ultraThinMaterial)
@@ -94,7 +160,7 @@ struct RegistrationView: View {
             .foregroundStyle(.ultraThinMaterial)
             .cornerRadius(35)
             .padding()
-            
+
         } else {
             // Fallback on earlier versions
             VStack {
@@ -105,8 +171,9 @@ struct RegistrationView: View {
 }
 /**
  FlatGlassView is a ViewModifier for the registrationView.
- 
+
  */
+
 struct FlatGlassView : ViewModifier {
     func body(content: Content) -> some View {
         if #available(iOS 15.0, *) {
