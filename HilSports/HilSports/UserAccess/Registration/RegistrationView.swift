@@ -26,6 +26,9 @@ struct RegistrationView: View {
     @State private var userDoesExist : Bool = true
     @StateObject var viewModel = RegistrationViewModel()
     
+    @State var test: Bool = false
+    
+    typealias CompletionHandler = (_ success: Bool) -> Void
     /**
      Double check which OS is the latest / which is most used os
      */
@@ -81,21 +84,27 @@ struct RegistrationView: View {
                         pwNotSameAlert = true
                         return
                     }
-
                     
                     
-                    let test: (String) -> Bool = viewModel.doesUserExist
-                    userDoesExist = test(email)
-                    print("UserDoesExist ist: \(userDoesExist)")
                     
-                    /*guard usernameAlert || pwEmptyAlert || pwNotSameAlert else {
-                        print("#####userdoesExist started#####")
-                        let test: (String) -> Bool = viewModel.doesUserExist
-                        userDoesExist = test(email)
+                    guard usernameAlert || pwEmptyAlert || pwNotSameAlert else {
+                        test = viewModel.doesUserExist(email: email, completionHandler: {(success) -> Void in
+                            if success {
+                                print("User does Exist!\nReturn Error!")
+                                userDoesExist = true
+                                test = true
+                                print("Test is\(test)")
+                                return
+                            } else {
+                                print("Test is\(test)")
+                                print("User is not in DB")
+                                
+                            }
+                        })
                         return
                     }
                 
-                    if !userDoesExist
+                    if !test
                     {
                         let newUser = RegistrationModel(username: self.username, password: self.password, email: self.email)
                         showRegistrationAlert = viewModel.signUp(registrationUser: newUser)
@@ -106,7 +115,7 @@ struct RegistrationView: View {
                         print("User is already in db")
                         return
                    
-                    }*/
+                    }
                 } label: {
                     ZStack {
                         Text("SIGN UP")
