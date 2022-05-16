@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 /**
  View for user registration.
@@ -26,9 +27,8 @@ struct RegistrationView: View {
     @State private var userDoesExist : Bool = true
     @StateObject var viewModel = RegistrationViewModel()
     
-    @State var test: Bool = false
-    
     typealias CompletionHandler = (_ success: Bool) -> Void
+    typealias CompletionHaendler = (_ sucessMessage: Bool) -> Void
     /**
      Double check which OS is the latest / which is most used os
      */
@@ -84,38 +84,25 @@ struct RegistrationView: View {
                         pwNotSameAlert = true
                         return
                     }
-                    
-                    
-                    
-                    guard usernameAlert || pwEmptyAlert || pwNotSameAlert else {
-                        test = viewModel.doesUserExist(email: email, completionHandler: {(success) -> Void in
-                            if success {
-                                print("User does Exist!\nReturn Error!")
-                                userDoesExist = true
-                                test = true
-                                print("Test is\(test)")
-                                return
-                            } else {
-                                print("Test is\(test)")
-                                print("User is not in DB")
-                                
-                            }
-                        })
-                        return
-                    }
-                
-                    if !test
-                    {
-                        let newUser = RegistrationModel(username: self.username, password: self.password, email: self.email)
-                        showRegistrationAlert = viewModel.signUp(registrationUser: newUser)
-                        print("Registration sucessful")
-                   
-                    } else {
-                        showRegistrationAlert = true
-                        print("User is already in db")
-                        return
-                   
-                    }
+                    viewModel.doesUserExist(email: email,completionHandler: { (success) -> Void in
+                        
+                        if success{
+                            print("user exists")
+                        } else {
+                            print("user does not exist")
+                            let registrationUser : RegistrationModel = RegistrationModel(username: username, password: password, email: email)
+                            
+                            viewModel.signUp(registrationUser: registrationUser, completionHaendler: {(successMessage) -> Void in
+                                if successMessage{
+                                    print("sucessmsg is: \(successMessage)")
+                                } else {
+                                    print("sucessmsg is: \(successMessage)")
+                                }
+                            })
+                        }
+                        
+                        
+                    })
                 } label: {
                     ZStack {
                         Text("SIGN UP")
