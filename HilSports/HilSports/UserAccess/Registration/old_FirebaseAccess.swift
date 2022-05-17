@@ -5,12 +5,12 @@
 //  Created by Dennis Hasselbusch on 22.12.21.
 //
 
-import Foundation
+/*import Foundation
 import SwiftUI
 import Firebase
 import FirebaseFirestore
 
-class RegistrationViewModel : ObservableObject {
+class FirebaseAccess : ObservableObject {
     
     private let db = Firestore.firestore()
     @State private var email : String = ""
@@ -67,7 +67,9 @@ class RegistrationViewModel : ObservableObject {
                             }
                         }
                     }
+
                 }
         
         }
 }
+*/

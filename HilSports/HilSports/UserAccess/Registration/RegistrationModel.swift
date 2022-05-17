@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Firebase
 
 struct RegistrationModel {
     var username : String
