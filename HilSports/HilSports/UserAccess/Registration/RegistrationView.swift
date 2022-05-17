@@ -8,24 +8,30 @@
 import SwiftUI
 import Firebase
 
-/**
- View for user registration.
- Variables are email, username, password and password again
- */
+//all Alerts
+enum ActiveAlert{
+    case usernameAlert,
+         emailAlert,
+         pwEmptyAlert,
+         pwNotSameAlert,
+         userDoesExist,
+         registrationSuccess
+}
 
 struct RegistrationView: View {
+
+    //Object for RegistrationViewModel
+    @StateObject var viewModel = RegistrationViewModel()
+    
+    //User variable
     @State private var email : String = ""
     @State private var username : String = ""
     @State private var password : String = ""
     @State private var passwordAgain : String = ""
     
     //Alert Identifier
-    @State private var usernameAlert : Bool = false
-    @State private var pwEmptyAlert : Bool = false
-    @State private var pwNotSameAlert : Bool = false
-    @State private var showRegistrationAlert : Bool = false
-    @State private var userDoesExist : Bool = true
-    @StateObject var viewModel = RegistrationViewModel()
+    @State private var showAlert = false
+    @State private var activeAlert: ActiveAlert = .usernameAlert
     
     typealias CompletionHandler = (_ success: Bool) -> Void
     typealias CompletionHaendler = (_ sucessMessage: Bool) -> Void
@@ -46,7 +52,7 @@ struct RegistrationView: View {
                     .font(.callout)
                     .frame(maxWidth : .infinity, alignment: .leading)
                 Divider().padding()
-                Spacer()
+                
                 VStack (spacing: 12) {
                     
                     TextField("Enter username", text: $username)
@@ -54,7 +60,6 @@ struct RegistrationView: View {
                     
                     TextField("Enter email", text: $email)
                         .modifier(FlatGlassView())
-                    
                     
                     SecureField("Enter password", text: $password)
                         .modifier(FlatGlassView())
@@ -72,29 +77,43 @@ struct RegistrationView: View {
                     .fixedSize(horizontal: false, vertical: true)
                 
                 Button {
-                    guard !username.isEmpty else{
-                        usernameAlert = true
+                    guard !username.isEmpty else {
+                        self.activeAlert = .usernameAlert
+                        self.showAlert = true
+                        return
+                    }
+                    guard !email.isEmpty else {
+                        self.activeAlert = .emailAlert
+                        self.showAlert = true
                         return
                     }
                     guard !password.isEmpty else {
-                        pwEmptyAlert = true
+                        self.activeAlert = .pwEmptyAlert
+                        self.showAlert = true
                         return
                     }
                     guard password == passwordAgain else {
-                        pwNotSameAlert = true
+                        self.activeAlert = .pwNotSameAlert
+                        self.showAlert = true
                         return
                     }
+
+                    if !showAlert{
                     viewModel.doesUserExist(email: email,completionHandler: { (success) -> Void in
-                        
                         if success{
                             print("user exists")
+                            self.activeAlert = .userDoesExist
+                            self.showAlert = true
+                            
                         } else {
                             print("user does not exist")
                             let registrationUser : RegistrationModel = RegistrationModel(username: username, password: password, email: email)
-                            
                             viewModel.signUp(registrationUser: registrationUser, completionHaendler: {(successMessage) -> Void in
                                 if successMessage{
                                     print("sucessmsg is: \(successMessage)")
+                                    self.activeAlert = .registrationSuccess
+                                    self.showAlert = true
+                                    
                                 } else {
                                     print("sucessmsg is: \(successMessage)")
                                 }
@@ -102,7 +121,7 @@ struct RegistrationView: View {
                         }
                         
                         
-                    })
+                    })}
                 } label: {
                     ZStack {
                         Text("SIGN UP")
@@ -114,40 +133,22 @@ struct RegistrationView: View {
                             .cornerRadius(14)
                             .padding(.bottom, 8)
                     }
-                }.alert(isPresented: self.$pwEmptyAlert){
-                    Alert(title: Text("Password field is Empty!"))
-                }
-                .alert(isPresented: self.$showRegistrationAlert){
-                    Alert(
-                        title: Text("Title"),
-                        message: Text("Message"),
-                        dismissButton: .default(Text("Okay"), action: {
-                        })
-                    )
-                }
-                .alert(isPresented: self.$pwNotSameAlert){
-                    Alert(
-                        title: Text("Passwords are not the same"),
-                        message: Text("Message"),
-                        dismissButton: .default(Text("Okay"), action: {
-                        })
-                    )
-                }
-                .alert(isPresented: self.$usernameAlert){
-                    Alert(
-                        title: Text("Username needs to be filled"),
-                        message: Text("Message"),
-                        dismissButton: .default(Text("Okay"), action: {
-                        })
-                    )
-                }
-                .alert(isPresented: self.$userDoesExist){
-                    Alert(
-                        title: Text("User does exist in db"),
-                        message: Text("Message"),
-                        dismissButton: .default(Text("Okay"), action: {
-                        })
-                    )
+                    .alert(isPresented: $showAlert){
+                        switch activeAlert {
+                            case .usernameAlert:
+                                return Alert(title: Text("Username needs to be filled"))
+                            case .emailAlert:
+                                return Alert(title: Text("Email needs to be filled"))
+                            case .pwEmptyAlert:
+                                return Alert(title: Text("Password field is Empty!"))
+                            case .pwNotSameAlert:
+                                return Alert(title: Text("Passwords are not the same"))
+                            case .userDoesExist:
+                                return Alert(title: Text("User does exist in db"))
+                            case .registrationSuccess:
+                                return Alert(title: Text("Registration successfull.\nYou can login now."))
+                        }
+                    }
                 }
             }
             .padding()
