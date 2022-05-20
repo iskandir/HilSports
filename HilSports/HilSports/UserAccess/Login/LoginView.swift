@@ -15,9 +15,10 @@ import SwiftUI
 struct LoginView: View {
     @State private var username = ""
     @State private var password = ""
-    @State var showAlert = false
+    @State private var showUsernamePasswordAlert = false
+    @State private var wrongPasswordAlert = false
     
-    @EnvironmentObject var loginModel : LoginModel
+    @EnvironmentObject var user : LoginModel
     @Binding var showLoginView : Bool
     @Binding var loggedUser : Bool
     @StateObject var firebaseModel = FirebaseAccess()
@@ -39,16 +40,27 @@ struct LoginView: View {
                 Button {
                     //TODO: Check if user is in database !!
                     guard !username.isEmpty, !password.isEmpty else {
-                        showAlert = true
+                        showUsernamePasswordAlert = true
                         return
                     }
                     
                     firebaseModel.doesUserExist(username: username, completionHandler: {(success) -> Void in
                         if success {
                             print("user exist")
-                        } else {
-                            print("user does not exist")
+                            firebaseModel.checkPassword(username: username, password: password, completionHandler: {(success) -> Void in
+                                if success
+                                {
+                                    print("PasswordCorrect")
+                                    loggedUser = true
+                                    showUsernamePasswordAlert = true
+                                
+                                } else {
+                                    print("password is not correct")
+                                    wrongPasswordAlert = true
+                                }
+                            })
                         }
+                            
                     })
                     
                 } label: {
@@ -63,6 +75,10 @@ struct LoginView: View {
                             .shadow(color: .black.opacity(0.65), radius: 14, x: 2, y: 2)
                     }
                 }
+                .alert(isPresented: self.$showUsernamePasswordAlert){
+                    Alert(title: Text("Username and password needs to be filled"))
+                }
+                .alert(isPresented: self.$wrongPasswordAlert){Alert(title: Text("Wrong password"))}
                 Button {
                     showLoginView = false
                 } label: {
@@ -75,9 +91,7 @@ struct LoginView: View {
                         .shadow(color: .white.opacity(0.65), radius: 14, x: -1, y: -2)
                         .shadow(color: .black.opacity(0.65), radius: 14, x: 2, y: 2)
                 }
-                .alert(isPresented: self.$showAlert){
-                    Alert(title: Text("Username and password needs to be filled"))
-                }
+                
                 Button {
                     //TODO:
                 } label: {

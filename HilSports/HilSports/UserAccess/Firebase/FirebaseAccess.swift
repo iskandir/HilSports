@@ -92,4 +92,35 @@ class FirebaseAccess : ObservableObject {
                 }
         
         }
+    func checkPassword(username : String, password : String, completionHandler: @escaping CompletionHandler)
+    {
+        let db = Firestore.firestore()
+        var passwordCorrect : Bool = false
+        
+        let docRef = db.collection("databaseUser").document("\(username)")
+        docRef.getDocument{(document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
+                print("\(document.data())")
+                //returns optional
+                let fieldVal = document.get("password") as! String
+                print("Password is: \(fieldVal)")
+                
+                if(fieldVal == password)
+                {
+                    passwordCorrect = true
+                    print("Password correct")
+                    completionHandler(passwordCorrect)
+                } else
+                {
+                    print("Password incorrect")
+                    completionHandler(passwordCorrect)
+                }
+                
+            } else {
+                print("test")
+            }
+        }
+    }
 }

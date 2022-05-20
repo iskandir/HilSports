@@ -101,21 +101,29 @@ struct RegistrationView: View {
                     if !showAlert{
                     viewModel.doesEmailExist(email: email,completionHandler: { (success) -> Void in
                         if success{
-                            print("user exists")
-                            self.activeAlert = .userDoesExist
+                            print("Email exists")
+                            self.activeAlert = .emailAlert
                             self.showAlert = true
                             
                         } else {
-                            print("user does not exist")
-                            let registrationUser : RegistrationModel = RegistrationModel(username: username, password: password, email: email)
-                            viewModel.signUp(registrationUser: registrationUser, completionHaendler: {(successMessage) -> Void in
-                                if successMessage{
-                                    print("sucessmsg is: \(successMessage)")
-                                    self.activeAlert = .registrationSuccess
+                            print("Email does not exist")
+                            viewModel.doesUserExist(username: username, completionHandler: {(success) -> Void in
+                                if success{
+                                    print("User does exist")
+                                    self.activeAlert = .userDoesExist
                                     self.showAlert = true
-                                    
                                 } else {
-                                    print("sucessmsg is: \(successMessage)")
+                                    let registrationUser : RegistrationModel = RegistrationModel(username: username, password: password, email: email)
+                                    viewModel.signUp(registrationUser: registrationUser, completionHaendler: {(successMessage) -> Void in
+                                        if successMessage{
+                                            print("sucessmsg is: \(successMessage)")
+                                            self.activeAlert = .registrationSuccess
+                                            self.showAlert = true
+                                            
+                                        } else {
+                                            print("sucessmsg is: \(successMessage)")
+                                        }
+                                    })
                                 }
                             })
                         }
