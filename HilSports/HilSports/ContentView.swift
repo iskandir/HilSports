@@ -4,49 +4,106 @@ import CoreData
 
 
 struct ContentView: View {
-    //Current view Status for Sidemenu
-    @State private var showingMenu = false
 
+    @State var showLoginView : Bool = false
+    @State var loggedUser : Bool = false
+    
     
     var body: some View {
+        if loggedUser == true {
+            MapLandingView()
+        } else {
             NavigationView{
-                ZStack(alignment: Alignment(horizontal: .leading, vertical: .top),content: {
-                    if showingMenu{
-                        SideMenu(showingMenu: $showingMenu)
+                VStack {
+                    WelcomeText()
+                    
+                    if showLoginView {
+                        LoginView(showLoginView: $showLoginView, loggedUser: $loggedUser)
+                            .animation(.easeIn)
                     } else {
-                    EventMap()
-                        .cornerRadius(showingMenu ? 20 : 10)
-                        .offset(x: showingMenu ? 300: 0, y: showingMenu ? 44 : 0)
-                        .scaleEffect(showingMenu ? 0.8 : 1)
-                        .ignoresSafeArea()
-                        .navigationBarItems(leading: Button(action: {
-                            withAnimation(.spring()){
-                                showingMenu.toggle()
-                            }
-                        }, label: {
-                            Image(systemName: "menubar.rectangle")
-                                .font(.title2)
-                                .foregroundColor(.black)
-                                .padding(.vertical, 10)
-                                .padding(.horizontal, 15)
-                                .background(Color.green)
-                                .cornerRadius(10)
-                                .shadow(color: Color.black.opacity(0.5), radius: 5, x: 5, y: 5)
-                        }))
-                        
+                        HStack{
+                            Button("Sign in") {
+                                self.showLoginView = true
+                            }.buttonStyle(AuthenticationButtonStyle(bgColor: .green))
+                            
+                            NavigationLink(destination: RegistrationView())
+                            {
+                                Text("Registration")
+                            }.buttonStyle(RegistrationButtonStyle(bgColor: .gray))
+                        }
                     }
-                })
+                }
             }
+            
+        }
+    }
+}
+//Button style for AuthenticationButton
+struct AuthenticationButtonStyle: ButtonStyle {
+    var bgColor: Color
+    
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .padding(20)
+            .background(
+                ZStack{
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .shadow(color: .white, radius: configuration.isPressed ? 7 : 10, x: configuration.isPressed ? -5: -15, y: configuration.isPressed ? -5: -15)
+                        .shadow(color: .black, radius: configuration.isPressed ? 7 : 10, x: configuration.isPressed ? 5: 15, y: configuration.isPressed ? 5: 15)
+                        .blendMode(.overlay)
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .fill(bgColor)
+                }
+            ).scaleEffect(configuration.isPressed ? 0.95: 1)
+            .foregroundColor(.white)
+            .animation(.spring())
+        
     }
 }
 
-struct GradientButtonStyle : ButtonStyle {
+//Button style for RegistrationButton
+struct RegistrationButtonStyle : ButtonStyle {
+    var bgColor: Color
+    
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .foregroundColor(Color.white)
+            .padding(20)
+            .background(
+                ZStack{
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .shadow(color: .white, radius: configuration.isPressed ? 7 : 10, x: configuration.isPressed ? -5: -15, y: configuration.isPressed ? -5: -15)
+                        .shadow(color: .black, radius: configuration.isPressed ? 7 : 10, x: configuration.isPressed ? 5: 15, y: configuration.isPressed ? 5: 15)
+                        .blendMode(.overlay)
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .fill(bgColor)
+                }
+            ).scaleEffect(configuration.isPressed ? 0.95: 1)
+            .foregroundColor(.white)
+            .animation(.spring())
+        
+    }
+}
+
+struct WelcomeText : View {
+    var body: some View {
+        
+        Text("Welcome to HilFit!")
+            .fontWeight(.black)
+            .foregroundColor(Color(.systemGreen))
+            .font(.largeTitle)
+            .multilineTextAlignment(.center)
+        
+        Text("Empower your life!")
+            .fontWeight(.light)
+            .multilineTextAlignment(.center)
             .padding()
-            .background(LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue]),startPoint: .leading, endPoint: .trailing))
-            .cornerRadius(25.0)
-            .scaleEffect(configuration.isPressed ? 1.3 : 1.0)
+        Image("hallo")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 150, height: 150)
+            .clipped()
+            .cornerRadius(150)
+            .padding(.bottom, 75)
+        
     }
 }

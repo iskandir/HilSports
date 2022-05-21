@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A29D4852833AADD00113E3E /* FirebaseAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29D4842833AADD00113E3E /* FirebaseAccess.swift */; };
 		3A9B1DC626D98478008AFBD6 /* HilSportsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1DC526D98478008AFBD6 /* HilSportsApp.swift */; };
 		3A9B1DC826D98478008AFBD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1DC726D98478008AFBD6 /* ContentView.swift */; };
 		3A9B1DCA26D9847B008AFBD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9B1DC926D9847B008AFBD6 /* Assets.xcassets */; };
@@ -30,7 +31,10 @@
 		3A9B1E1326D98663008AFBD6 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1226D98663008AFBD6 /* Error.swift */; };
 		3A9B1E1526D9866B008AFBD6 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1426D9866B008AFBD6 /* BookmarksView.swift */; };
 		3A9B1E1826D98AF7008AFBD6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1726D98AF7008AFBD6 /* GoogleService-Info.plist */; };
-		3A9B1E1A26D98F5F008AFBD6 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1926D98F5F008AFBD6 /* LoginModel.swift */; };
+		3A9B1E1C26D990D0008AFBD6 /* MapLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1B26D990D0008AFBD6 /* MapLandingView.swift */; };
+		3A9B1E2026DBACCD008AFBD6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1F26DBACCD008AFBD6 /* LoginView.swift */; };
+		3A9B1E2326DCA0CF008AFBD6 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E2226DCA0CF008AFBD6 /* RegistrationView.swift */; };
+		3A9B1E2626DE6848008AFBD6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E2526DE6848008AFBD6 /* UserModel.swift */; };
 		4EE18682A441CD15F67825F9 /* Pods_HilSports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81B89EAD6896377912F3411 /* Pods_HilSports.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		1C54AD52284D65BCADC77C94 /* Pods-HilSports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HilSports.debug.xcconfig"; path = "Target Support Files/Pods-HilSports/Pods-HilSports.debug.xcconfig"; sourceTree = "<group>"; };
+		3A29D4842833AADD00113E3E /* FirebaseAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAccess.swift; sourceTree = "<group>"; };
 		3A9B1DC226D98478008AFBD6 /* HilSports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HilSports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9B1DC526D98478008AFBD6 /* HilSportsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HilSportsApp.swift; sourceTree = "<group>"; };
 		3A9B1DC726D98478008AFBD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,7 +87,10 @@
 		3A9B1E1226D98663008AFBD6 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		3A9B1E1426D9866B008AFBD6 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		3A9B1E1726D98AF7008AFBD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3A9B1E1926D98F5F008AFBD6 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		3A9B1E1B26D990D0008AFBD6 /* MapLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLandingView.swift; sourceTree = "<group>"; };
+		3A9B1E1F26DBACCD008AFBD6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3A9B1E2226DCA0CF008AFBD6 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		3A9B1E2526DE6848008AFBD6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		41458ED035C3DF0F4896143B /* Pods-HilSports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HilSports.release.xcconfig"; path = "Target Support Files/Pods-HilSports/Pods-HilSports.release.xcconfig"; sourceTree = "<group>"; };
 		E81B89EAD6896377912F3411 /* Pods_HilSports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HilSports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -113,6 +121,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A4961AC28008387001A6A60 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				3A29D4842833AADD00113E3E /* FirebaseAccess.swift */,
+				3A9B1E2526DE6848008AFBD6 /* UserModel.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		3A9B1DB926D98478008AFBD6 = {
 			isa = PBXGroup;
 			children = (
@@ -138,7 +155,7 @@
 		3A9B1DC426D98478008AFBD6 /* HilSports */ = {
 			isa = PBXGroup;
 			children = (
-				3A9B1E1626D987FD008AFBD6 /* Login */,
+				3A9B1E2126DCA0BA008AFBD6 /* UserAccess */,
 				3A9B1DFE26D98530008AFBD6 /* Map */,
 				3A9B1DF526D984D0008AFBD6 /* Menu */,
 				3A9B1DC526D98478008AFBD6 /* HilSportsApp.swift */,
@@ -197,6 +214,7 @@
 				3A9B1DFF26D98540008AFBD6 /* CardView.swift */,
 				3A9B1E0126D98555008AFBD6 /* EventMap.swift */,
 				3A9B1E0326D98567008AFBD6 /* FilterItem.swift */,
+				3A9B1E1B26D990D0008AFBD6 /* MapLandingView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -218,9 +236,27 @@
 		3A9B1E1626D987FD008AFBD6 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				3A9B1E1926D98F5F008AFBD6 /* LoginModel.swift */,
+				3A9B1E1F26DBACCD008AFBD6 /* LoginView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		3A9B1E2126DCA0BA008AFBD6 /* UserAccess */ = {
+			isa = PBXGroup;
+			children = (
+				3A4961AC28008387001A6A60 /* Firebase */,
+				3A9B1E2426DCA0DA008AFBD6 /* Registration */,
+				3A9B1E1626D987FD008AFBD6 /* Login */,
+			);
+			path = UserAccess;
+			sourceTree = "<group>";
+		};
+		3A9B1E2426DCA0DA008AFBD6 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				3A9B1E2226DCA0CF008AFBD6 /* RegistrationView.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 		43F5F1AF53308972403203BA /* Pods */ = {
@@ -414,7 +450,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A9B1E1A26D98F5F008AFBD6 /* LoginModel.swift in Sources */,
 				3A9B1DFD26D9851B008AFBD6 /* SideMenuViewModel.swift in Sources */,
 				3A9B1E0026D98540008AFBD6 /* CardView.swift in Sources */,
 				3A9B1E1526D9866B008AFBD6 /* BookmarksView.swift in Sources */,
@@ -423,15 +458,20 @@
 				3A9B1E1126D98656008AFBD6 /* ListsView.swift in Sources */,
 				3A9B1E0D26D9862C008AFBD6 /* MessagesView.swift in Sources */,
 				3A9B1E0626D985EF008AFBD6 /* ProfileView.swift in Sources */,
+				3A9B1E2626DE6848008AFBD6 /* UserModel.swift in Sources */,
 				3A9B1DCF26D9847B008AFBD6 /* Persistence.swift in Sources */,
 				3A9B1E0F26D9863E008AFBD6 /* LogoutView.swift in Sources */,
+				3A9B1E2326DCA0CF008AFBD6 /* RegistrationView.swift in Sources */,
 				3A9B1E1326D98663008AFBD6 /* Error.swift in Sources */,
 				3A9B1DC826D98478008AFBD6 /* ContentView.swift in Sources */,
+				3A9B1E1C26D990D0008AFBD6 /* MapLandingView.swift in Sources */,
 				3A9B1DF726D984DB008AFBD6 /* SideMenu.swift in Sources */,
+				3A9B1E2026DBACCD008AFBD6 /* LoginView.swift in Sources */,
 				3A9B1DF926D984EE008AFBD6 /* SideMenuHeaderView.swift in Sources */,
 				3A9B1DD226D9847B008AFBD6 /* HilSports.xcdatamodeld in Sources */,
 				3A9B1E0926D98607008AFBD6 /* NotificationsView.swift in Sources */,
 				3A9B1DC626D98478008AFBD6 /* HilSportsApp.swift in Sources */,
+				3A29D4852833AADD00113E3E /* FirebaseAccess.swift in Sources */,
 				3A9B1E0226D98555008AFBD6 /* EventMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
