@@ -6,6 +6,11 @@
 //
 
 import SwiftUI
+
+enum ActiveAlerts
+{
+    case bothEmptyAlert, usernameDoesNotExist, wrongPasswordAlert
+}
 /**
  LoginView for user login.
  binding variable for ContentView :
@@ -13,12 +18,16 @@ import SwiftUI
  showLoginViev = displays if the LoginView needs to been shown
  */
 struct LoginView: View {
+    //User Login Var
     @State private var username = ""
     @State private var password = ""
-    @State private var showUsernamePasswordAlert = false
-    @State private var wrongPasswordAlert = false
     
-    @EnvironmentObject var user : LoginModel
+    //Alert Identifier
+    @State private var showAlert : Bool = false
+    @State private var activeAlert: ActiveAlerts = .bothEmptyAlert
+    
+    //Model identifier
+    @EnvironmentObject var user : UserModel
     @Binding var showLoginView : Bool
     @Binding var loggedUser : Bool
     @StateObject var firebaseModel = FirebaseAccess()
@@ -38,27 +47,31 @@ struct LoginView: View {
                 .padding()
                 
                 Button {
-                    //TODO: Check if user is in database !!
                     guard !username.isEmpty, !password.isEmpty else {
-                        showUsernamePasswordAlert = true
+                        self.activeAlert = .bothEmptyAlert
+                        self.showAlert = true
                         return
                     }
                     
                     firebaseModel.doesUserExist(username: username, completionHandler: {(success) -> Void in
                         if success {
-                            print("user exist")
                             firebaseModel.checkPassword(username: username, password: password, completionHandler: {(success) -> Void in
                                 if success
                                 {
                                     print("PasswordCorrect")
                                     loggedUser = true
-                                    showUsernamePasswordAlert = true
-                                
                                 } else {
                                     print("password is not correct")
-                                    wrongPasswordAlert = true
+                                    self.activeAlert = .wrongPasswordAlert
+                                    self.showAlert = true
+                                    return
                                 }
                             })
+                        } else {
+                            print("Username does not exist")
+                            self.activeAlert = .usernameDoesNotExist
+                            self.showAlert = true
+                            return
                         }
                             
                     })
@@ -75,10 +88,16 @@ struct LoginView: View {
                             .shadow(color: .black.opacity(0.65), radius: 14, x: 2, y: 2)
                     }
                 }
-                .alert(isPresented: self.$showUsernamePasswordAlert){
-                    Alert(title: Text("Username and password needs to be filled"))
+                .alert(isPresented: $showAlert){
+                    switch activeAlert {
+                    case .bothEmptyAlert:
+                        return Alert(title: Text("Email and password needs to be filled"))
+                    case .usernameDoesNotExist:
+                        return Alert(title: Text("Username does not exist"))
+                    case .wrongPasswordAlert:
+                        return Alert(title: Text("Wrong password"))
+                    }
                 }
-                .alert(isPresented: self.$wrongPasswordAlert){Alert(title: Text("Wrong password"))}
                 Button {
                     showLoginView = false
                 } label: {

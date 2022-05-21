@@ -5,7 +5,6 @@ import CoreData
 
 struct ContentView: View {
 
-    @EnvironmentObject var loginModel: LoginModel
     @State var showLoginView : Bool = false
     @State var loggedUser : Bool = false
     

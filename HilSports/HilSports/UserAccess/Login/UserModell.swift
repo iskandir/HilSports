@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LoginModel : ObservableObject {
+class UserModell : ObservableObject {
     var username : String?
     var password : String?
     var email : String?

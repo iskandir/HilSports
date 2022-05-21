@@ -15,10 +15,10 @@ class FirebaseAccess : ObservableObject {
     typealias CompletionHandler = (_ success:Bool) -> Void
     typealias CompletionHaendler = (_ sucessMessage: Bool) -> Void
 
-    @Published var registrationUser : RegistrationModel = RegistrationModel(username: "", password: "", email: "")
+    @Published var registrationUser : UserModel = UserModel(username: "", password: "", email: "")
     
     //User Signup does work correctly
-    func signUp(registrationUser : RegistrationModel,completionHaendler: @escaping CompletionHaendler)
+    func signUp(registrationUser : UserModel,completionHaendler: @escaping CompletionHaendler)
     {
         var sucessMessage : Bool = false
         let db = Firestore.firestore()
@@ -102,7 +102,7 @@ class FirebaseAccess : ObservableObject {
             if let document = document, document.exists {
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                 print("Document data: \(dataDescription)")
-                print("\(document.data())")
+                print("\(String(describing: document.data()))")
                 //returns optional
                 let fieldVal = document.get("password") as! String
                 print("Password is: \(fieldVal)")

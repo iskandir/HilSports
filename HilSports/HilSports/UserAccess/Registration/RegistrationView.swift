@@ -113,7 +113,7 @@ struct RegistrationView: View {
                                     self.activeAlert = .userDoesExist
                                     self.showAlert = true
                                 } else {
-                                    let registrationUser : RegistrationModel = RegistrationModel(username: username, password: password, email: email)
+                                    let registrationUser : UserModel = UserModel(username: username, password: password, email: email)
                                     viewModel.signUp(registrationUser: registrationUser, completionHaendler: {(successMessage) -> Void in
                                         if successMessage{
                                             print("sucessmsg is: \(successMessage)")
