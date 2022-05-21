@@ -15,7 +15,7 @@ class FirebaseAccess : ObservableObject {
     typealias CompletionHandler = (_ success:Bool) -> Void
     typealias CompletionHaendler = (_ sucessMessage: Bool) -> Void
 
-    @Published var registrationUser : UserModel = UserModel(username: "", password: "", email: "")
+    @State var registrationUser : UserModel = UserModel()
     
     //User Signup does work correctly
     func signUp(registrationUser : UserModel,completionHaendler: @escaping CompletionHaendler)

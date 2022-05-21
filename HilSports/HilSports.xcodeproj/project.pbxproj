@@ -121,6 +121,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A29D48828391E3C00113E3E /* filterSport */ = {
+			isa = PBXGroup;
+			children = (
+				3A9B1DFF26D98540008AFBD6 /* CardView.swift */,
+				3A9B1E0326D98567008AFBD6 /* FilterItem.swift */,
+			);
+			path = filterSport;
+			sourceTree = "<group>";
+		};
 		3A4961AC28008387001A6A60 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,9 +220,8 @@
 		3A9B1DFE26D98530008AFBD6 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				3A9B1DFF26D98540008AFBD6 /* CardView.swift */,
+				3A29D48828391E3C00113E3E /* filterSport */,
 				3A9B1E0126D98555008AFBD6 /* EventMap.swift */,
-				3A9B1E0326D98567008AFBD6 /* FilterItem.swift */,
 				3A9B1E1B26D990D0008AFBD6 /* MapLandingView.swift */,
 			);
 			path = Map;

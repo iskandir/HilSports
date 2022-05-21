@@ -21,6 +21,7 @@ struct LoginView: View {
     //User Login Var
     @State private var username = ""
     @State private var password = ""
+    @State private var email = ""
     
     //Alert Identifier
     @State private var showAlert : Bool = false
@@ -28,6 +29,7 @@ struct LoginView: View {
     
     //Model identifier
     @EnvironmentObject var user : UserModel
+    
     @Binding var showLoginView : Bool
     @Binding var loggedUser : Bool
     @StateObject var firebaseModel = FirebaseAccess()
@@ -58,7 +60,7 @@ struct LoginView: View {
                             firebaseModel.checkPassword(username: username, password: password, completionHandler: {(success) -> Void in
                                 if success
                                 {
-                                    print("PasswordCorrect")
+                                    user.username = username
                                     loggedUser = true
                                 } else {
                                     print("password is not correct")

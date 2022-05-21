@@ -8,10 +8,10 @@ struct ContentView: View {
     @State var showLoginView : Bool = false
     @State var loggedUser : Bool = false
     
-    
+    @StateObject var user = UserModel()
     var body: some View {
         if loggedUser == true {
-            MapLandingView()
+            MapLandingView().environmentObject(user)
         } else {
             NavigationView{
                 VStack {
@@ -20,6 +20,7 @@ struct ContentView: View {
                     if showLoginView {
                         LoginView(showLoginView: $showLoginView, loggedUser: $loggedUser)
                             .animation(.easeIn)
+                            .environmentObject(user)
                     } else {
                         HStack{
                             Button("Sign in") {

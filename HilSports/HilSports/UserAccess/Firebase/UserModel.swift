@@ -8,13 +8,10 @@
 import Foundation
 
 class UserModel : ObservableObject{
-    var username : String
-    var password : String
-    var email : String
+    @Published var username : String = ""
+    @Published var password : String = ""
+    @Published var email : String = ""
     
-    init(username: String, password: String, email: String){
-        self.username = username
-        self.password = password
-        self.email = email
-    }
+
 }
+
