@@ -60,7 +60,9 @@ struct LoginView: View {
                             firebaseModel.checkPassword(username: username, password: password, completionHandler: {(success) -> Void in
                                 if success
                                 {
+                                    //TODO: write function to set user data - username can be set, email cant be set bc its not read from the database
                                     user.username = username
+                                    user.email = email
                                     loggedUser = true
                                 } else {
                                     print("password is not correct")

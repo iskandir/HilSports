@@ -9,6 +9,7 @@ struct ContentView: View {
     @State var loggedUser : Bool = false
     
     @StateObject var user = UserModel()
+    
     var body: some View {
         if loggedUser == true {
             MapLandingView().environmentObject(user)

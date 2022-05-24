@@ -24,6 +24,8 @@ struct EventMap: View {
     @State var edgesCardview = UIApplication.shared.windows.first?.safeAreaInsets
     @State var showFilter = false
     
+    @EnvironmentObject var user : UserModel
+    
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom), content: {
             Map(coordinateRegion: $region, showsUserLocation: true, userTrackingMode: .constant(.follow), annotationItems: locations) {(location) -> MapPin in MapPin(coordinate: location.coordinate, tint: .green)}
@@ -31,6 +33,9 @@ struct EventMap: View {
             Button(action: {
                     withAnimation{
                         showFilter.toggle()
+                        //TESTCASE:
+                        //TODO: Username is filled, password and email is hide from the whole app.
+                        print("Username:\(user.username) / Password: \(user.password) / Email: \(user.email)")
                     }
             }, label: {
             Image(systemName: "list.dash")

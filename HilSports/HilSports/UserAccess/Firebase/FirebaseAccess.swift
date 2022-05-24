@@ -21,15 +21,22 @@ class FirebaseAccess : ObservableObject {
     func signUp(registrationUser : UserModel,completionHaendler: @escaping CompletionHaendler)
     {
         var sucessMessage : Bool = false
-        let db = Firestore.firestore()
-        let docRef = db.collection("databaseUser").document(registrationUser.email)
+        //access to different database
+        let docRefUD = db.collection("databaseUserData").document(registrationUser.email)
+        let docRefUP = db.collection("databaseUserPasswords").document(registrationUser.username)
         
-        let docData: [String: Any] = [
+        
+        //docData for writing in databases
+        let docUDData: [String: Any] = [
             "username" : registrationUser.username,
-            "email" : registrationUser.email,
+            "email" : registrationUser.email]
+        let docUPData: [String: Any] = [
+            "username" : registrationUser.username,
             "password" : registrationUser.password]
         
-        docRef.setData(docData)
+        
+        
+        docRefUD.setData(docUDData)
         { error in
             if let error = error {
                 print("Error writing document: \(error)")
@@ -41,13 +48,26 @@ class FirebaseAccess : ObservableObject {
                 completionHaendler(sucessMessage)
             }
         }
+            
+            docRefUP.setData(docUPData)
+            { error in
+                if let error = error {
+                    print("Error writing document: \(error)")
+                    sucessMessage = false
+                    completionHaendler(sucessMessage)
+                } else {
+                    print("SignUp!")
+                    sucessMessage = true
+                    completionHaendler(sucessMessage)
+                }
+            }
+            
     }
 
     func doesEmailExist(email : String, completionHandler: @escaping CompletionHandler) {
-        let db = Firestore.firestore()
         var userExistVar = false
        
-            db.collection("databaseUser")
+            db.collection("databaseUserData")
                 .whereField("email", isEqualTo: email)
                 .getDocuments(){(querySnapshot,err) in
                     if let err = err {
@@ -69,10 +89,9 @@ class FirebaseAccess : ObservableObject {
         }
     
     func doesUserExist(username : String, completionHandler: @escaping CompletionHandler) {
-        let db = Firestore.firestore()
         var userExistVar = false
        
-            db.collection("databaseUser")
+            db.collection("databaseUserData")
                 .whereField("username", isEqualTo: username)
                 .getDocuments(){(querySnapshot,err) in
                     if let err = err {
@@ -94,19 +113,20 @@ class FirebaseAccess : ObservableObject {
         }
     func checkPassword(username : String, password : String, completionHandler: @escaping CompletionHandler)
     {
-        let db = Firestore.firestore()
         var passwordCorrect : Bool = false
         
-        let docRef = db.collection("databaseUser").document("\(username)")
+        let docRef = db.collection("databaseUserPasswords").document("\(username)")
         docRef.getDocument{(document, error) in
             if let document = document, document.exists {
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
+                let fieldVal = document.get("password") as! String
+                
+                //TODO: Test cases for checking the database values
+                /*print("Document data: \(dataDescription)")
                 print("\(String(describing: document.data()))")
                 //returns optional
-                let fieldVal = document.get("password") as! String
                 print("Password is: \(fieldVal)")
-                
+                */
                 if(fieldVal == password)
                 {
                     passwordCorrect = true
@@ -122,5 +142,11 @@ class FirebaseAccess : ObservableObject {
                 print("test")
             }
         }
+    }
+
+
+    func setUserData(username : String, completionHandler: @escaping CompletionHandler)
+    {
+        //let docRef = db.collection()
     }
 }
