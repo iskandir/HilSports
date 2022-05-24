@@ -16,6 +16,7 @@ class FirebaseAccess : ObservableObject {
     typealias CompletionHaendler = (_ sucessMessage: Bool) -> Void
 
     @State var registrationUser : UserModel = UserModel()
+    @EnvironmentObject var user : UserModel
     
     //User Signup does work correctly
     func signUp(registrationUser : UserModel,completionHaendler: @escaping CompletionHaendler)
@@ -118,11 +119,12 @@ class FirebaseAccess : ObservableObject {
         let docRef = db.collection("databaseUserPasswords").document("\(username)")
         docRef.getDocument{(document, error) in
             if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                 let fieldVal = document.get("password") as! String
                 
                 //TODO: Test cases for checking the database values
-                /*print("Document data: \(dataDescription)")
+                /*
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
                 print("\(String(describing: document.data()))")
                 //returns optional
                 print("Password is: \(fieldVal)")
@@ -149,4 +151,11 @@ class FirebaseAccess : ObservableObject {
     {
         //let docRef = db.collection()
     }
+    
+    //TODO: function to change UserData if necessary
+    func changeUserData(username: String, completionHandler : @escaping CompletionHandler)
+    {
+        
+    }
+    
 }
