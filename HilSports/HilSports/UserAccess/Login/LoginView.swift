@@ -61,8 +61,15 @@ struct LoginView: View {
                                 if success
                                 {
                                     //TODO: write function to set user data - username can be set, email cant be set bc its not read from the database
-                                    user.username = username
-                                    user.email = email
+                                    let userSettings = UpdateUserData(user: user)
+                                    user.email = userSettings.setUserData(username: username, completionHandler: {(success) -> Void in
+                                       if success {
+                                           user.username = username
+                                       } else {
+                                           print("Error while setting userData")
+                                           //TODO: set activeAlert userDataError!!!
+                                       }
+                                   })
                                     loggedUser = true
                                 } else {
                                     print("password is not correct")

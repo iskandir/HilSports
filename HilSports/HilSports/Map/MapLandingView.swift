@@ -11,7 +11,6 @@
     struct MapLandingView: View {
         //Current view Status for Sidemenu
         @State private var showingMenu = false
-
         @EnvironmentObject var user : UserModel
         
         var body: some View {

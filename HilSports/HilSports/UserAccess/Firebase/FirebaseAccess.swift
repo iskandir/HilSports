@@ -119,8 +119,7 @@ class FirebaseAccess : ObservableObject {
         let docRef = db.collection("databaseUserPasswords").document("\(username)")
         docRef.getDocument{(document, error) in
             if let document = document, document.exists {
-                let fieldVal = document.get("password") as! String
-                
+                let passwordVal = document.get("password") as! String
                 //TODO: Test cases for checking the database values
                 /*
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
@@ -129,7 +128,7 @@ class FirebaseAccess : ObservableObject {
                 //returns optional
                 print("Password is: \(fieldVal)")
                 */
-                if(fieldVal == password)
+                if(passwordVal == password)
                 {
                     passwordCorrect = true
                     print("Password correct")
@@ -144,18 +143,5 @@ class FirebaseAccess : ObservableObject {
                 print("test")
             }
         }
-    }
-
-
-    func setUserData(username : String, completionHandler: @escaping CompletionHandler)
-    {
-        //let docRef = db.collection()
-    }
-    
-    //TODO: function to change UserData if necessary
-    func changeUserData(username: String, completionHandler : @escaping CompletionHandler)
-    {
-        
-    }
-    
+    }    
 }
