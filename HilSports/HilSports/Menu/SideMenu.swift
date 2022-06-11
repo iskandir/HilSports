@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SideMenu: View {
     @Binding var showingMenu : Bool
+    @EnvironmentObject var user : UserModel
+    
     
     var body: some View {
         ZStack{

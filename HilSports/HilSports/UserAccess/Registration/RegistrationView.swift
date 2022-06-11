@@ -21,7 +21,7 @@ enum ActiveAlert{
 struct RegistrationView: View {
 
     //Object for RegistrationViewModel
-    @StateObject var viewModel = FirebaseAccess()
+    @State var viewModel = FirebaseAccess()
     
     //User variable
     @State private var email : String = ""
@@ -113,10 +113,12 @@ struct RegistrationView: View {
                                     self.activeAlert = .userDoesExist
                                     self.showAlert = true
                                 } else {
-                                    let registrationUser : UserModel = UserModel()
+                                    let registrationUser : UserModel = UserModel(username: username, password: password, email: email)
+                                    
+                                        /* CHECK IF THIS CODE CAN BE DELETED
                                         registrationUser.username = username
                                         registrationUser.password = password
-                                        registrationUser.email = email
+                                        registrationUser.email = email*/
                                     viewModel.signUp(registrationUser: registrationUser, completionHaendler: {(successMessage) -> Void in
                                         if successMessage{
                                             print("sucessmsg is: \(successMessage)")

@@ -10,6 +10,7 @@ import Firebase
 
 @main
 struct HilSportsApp: App {
+    
     let persistenceController = PersistenceController.shared
     init(){
         setupAuthentication()

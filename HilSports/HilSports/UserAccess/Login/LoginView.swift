@@ -28,11 +28,12 @@ struct LoginView: View {
     @State private var activeAlert: ActiveAlerts = .bothEmptyAlert
     
     //Model identifier
-    @EnvironmentObject var user : UserModel
-    
+    @State var updateUserData = UpdateUserData()
+    @State var firebaseModel = FirebaseAccess()
     @Binding var showLoginView : Bool
     @Binding var loggedUser : Bool
-    @StateObject var firebaseModel = FirebaseAccess()
+    
+    @EnvironmentObject var user : UserModel
     
     typealias CompletionHandler = (_ success: Bool) -> Void
     
@@ -57,19 +58,13 @@ struct LoginView: View {
                     
                     firebaseModel.doesUserExist(username: username, completionHandler: {(success) -> Void in
                         if success {
+                            user.username = username
                             firebaseModel.checkPassword(username: username, password: password, completionHandler: {(success) -> Void in
                                 if success
                                 {
-                                    //TODO: write function to set user data - username can be set, email cant be set bc its not read from the database
-                                    let userSettings = UpdateUserData(user: user)
-                                    user.email = userSettings.setUserData(username: username, completionHandler: {(success) -> Void in
-                                       if success {
-                                           user.username = username
-                                       } else {
-                                           print("Error while setting userData")
-                                           //TODO: set activeAlert userDataError!!!
-                                       }
-                                   })
+                                    let updateUserData = UpdateUserData()
+                                    updateUserData.setUserData(user: user)
+                                    //TODO: set activeAlert userDataError!!! when no network etc...
                                     loggedUser = true
                                 } else {
                                     print("password is not correct")
@@ -133,7 +128,7 @@ struct LoginView: View {
             .foregroundColor(Color.black)
             .foregroundStyle(.ultraThinMaterial)
             .cornerRadius(35)
-            
+            .environmentObject(user)
         } else {
             // Fallback on earlier versions
         }

@@ -10,14 +10,12 @@ import SwiftUI
 import Firebase
 import FirebaseFirestore
 
-class FirebaseAccess : ObservableObject {
-    private let db = Firestore.firestore()
+struct FirebaseAccess {
+    private var db = Firestore.firestore()
     typealias CompletionHandler = (_ success:Bool) -> Void
     typealias CompletionHaendler = (_ sucessMessage: Bool) -> Void
 
-    @State var registrationUser : UserModel = UserModel()
-    @EnvironmentObject var user : UserModel
-    
+    @State var registrationUser : UserModel = UserModel(username: "", password: "", email: "")
     //User Signup does work correctly
     func signUp(registrationUser : UserModel,completionHaendler: @escaping CompletionHaendler)
     {
@@ -25,7 +23,6 @@ class FirebaseAccess : ObservableObject {
         //access to different database
         let docRefUD = db.collection("databaseUserData").document(registrationUser.email)
         let docRefUP = db.collection("databaseUserPasswords").document(registrationUser.username)
-        
         
         //docData for writing in databases
         let docUDData: [String: Any] = [
@@ -50,21 +47,21 @@ class FirebaseAccess : ObservableObject {
             }
         }
             
-            docRefUP.setData(docUPData)
-            { error in
-                if let error = error {
-                    print("Error writing document: \(error)")
-                    sucessMessage = false
-                    completionHaendler(sucessMessage)
-                } else {
-                    print("SignUp!")
-                    sucessMessage = true
-                    completionHaendler(sucessMessage)
-                }
+        docRefUP.setData(docUPData)
+        { error in
+            if let error = error {
+                print("Error writing document: \(error)")
+                sucessMessage = false
+                completionHaendler(sucessMessage)
+            } else {
+                print("SignUp!")
+                sucessMessage = true
+                completionHaendler(sucessMessage)
             }
+        }
             
     }
-
+    //TODO: RETURN FUCKING VALUE
     func doesEmailExist(email : String, completionHandler: @escaping CompletionHandler) {
         var userExistVar = false
        
@@ -88,7 +85,7 @@ class FirebaseAccess : ObservableObject {
                 }
         
         }
-    
+    //TODO: RETURN FUCKING VALUE
     func doesUserExist(username : String, completionHandler: @escaping CompletionHandler) {
         var userExistVar = false
        
@@ -104,6 +101,7 @@ class FirebaseAccess : ObservableObject {
                         } else {
                             for document in querySnapshot!.documents{
                                 userExistVar = true
+                                print("User \(username) does exist!")
                                 print("\(document.documentID) is \(document.data())")
                                 completionHandler(userExistVar)
                             }
@@ -131,11 +129,9 @@ class FirebaseAccess : ObservableObject {
                 if(passwordVal == password)
                 {
                     passwordCorrect = true
-                    print("Password correct")
                     completionHandler(passwordCorrect)
                 } else
                 {
-                    print("Password incorrect")
                     completionHandler(passwordCorrect)
                 }
                 

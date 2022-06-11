@@ -17,27 +17,29 @@
                 NavigationView{
                     ZStack(alignment: Alignment(horizontal: .leading, vertical: .top),content: {
                         if showingMenu{
-                            SideMenu(showingMenu: $showingMenu)
+                            SideMenu(showingMenu: $showingMenu).environmentObject(user)
+                            
                         } else {
-                        EventMap()
-                            .cornerRadius(showingMenu ? 20 : 10)
-                            .offset(x: showingMenu ? 300: 0, y: showingMenu ? 44 : 0)
-                            .scaleEffect(showingMenu ? 0.8 : 1)
-                            .ignoresSafeArea()
-                            .navigationBarItems(leading: Button(action: {
-                                withAnimation(.spring()){
-                                    showingMenu.toggle()
-                                }
-                            }, label: {
-                                Image(systemName: "menubar.rectangle")
-                                    .font(.title2)
-                                    .foregroundColor(.black)
-                                    .padding(.vertical, 10)
-                                    .padding(.horizontal, 15)
-                                    .background(Color.green)
-                                    .cornerRadius(10)
-                                    .shadow(color: Color.black.opacity(0.5), radius: 5, x: 5, y: 5)
-                            }))
+                            EventMap()
+                                .environmentObject(user)
+                                .cornerRadius(showingMenu ? 20 : 10)
+                                .offset(x: showingMenu ? 300: 0, y: showingMenu ? 44 : 0)
+                                .scaleEffect(showingMenu ? 0.8 : 1)
+                                .ignoresSafeArea()
+                                .navigationBarItems(leading: Button(action: {
+                                    withAnimation(.spring()){
+                                        showingMenu.toggle()
+                                    }
+                                }, label: {
+                                    Image(systemName: "menubar.rectangle")
+                                        .font(.title2)
+                                        .foregroundColor(.black)
+                                        .padding(.vertical, 10)
+                                        .padding(.horizontal, 15)
+                                        .background(Color.green)
+                                        .cornerRadius(10)
+                                        .shadow(color: Color.black.opacity(0.5), radius: 5, x: 5, y: 5)
+                                }))
                             
                         }
                     })

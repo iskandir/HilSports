@@ -1,6 +1,5 @@
 
 import SwiftUI
-import CoreData
 
 
 struct ContentView: View {
@@ -8,7 +7,7 @@ struct ContentView: View {
     @State var showLoginView : Bool = false
     @State var loggedUser : Bool = false
     
-    @StateObject var user = UserModel()
+    @StateObject private var user = UserModel(username: "", password: "", email: "")
     
     var body: some View {
         if loggedUser == true {
@@ -21,7 +20,7 @@ struct ContentView: View {
                     if showLoginView {
                         LoginView(showLoginView: $showLoginView, loggedUser: $loggedUser)
                             .animation(.easeIn)
-                            .environmentObject(user)
+                            
                     } else {
                         HStack{
                             Button("Sign in") {
@@ -34,7 +33,7 @@ struct ContentView: View {
                             }.buttonStyle(RegistrationButtonStyle(bgColor: .gray))
                         }
                     }
-                }
+                }.environmentObject(user)
             }
             
         }
