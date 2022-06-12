@@ -34,8 +34,8 @@ struct EventMap: View {
                     withAnimation{
                         showFilter.toggle()
                         //TESTCASE:
-                        //TODO: Username is filled, password and email is hide from the whole app.
-                        print("Username:\(user.username) / Password: \(user.password) / Email: \(user.email)")
+                        //MARK: Testcase for debugging
+                        /*print("Username:\(user.username) / Password: \(user.password) / Email: \(user.email)")*/
                     }
             }, label: {
             Image(systemName: "list.dash")

@@ -17,16 +17,16 @@ struct SideMenu: View {
             LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue]), startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             VStack{
-                //Header
+                //show SideMenuHeaderView
                 SideMenuHeaderView(showingMenu: $showingMenu)
                     .frame(height:240)
                 
                 //Cell items
                 ForEach(SideMenuViewModel.allCases, id:\.self){option in
                     NavigationLink(destination: self.destinationView(title: option.title),
-                                                     label: {
-                                                      SideMenuOptionView(viewModel: option)
-                                   })
+                                   label: {
+                        SideMenuOptionView(viewModel: option)
+                    })
                 }
                 
                 Spacer()
@@ -40,8 +40,9 @@ struct SideMenu: View {
            switch title {
                case "Profile" :
                    return AnyView(ProfileView())
-               case "Lists" :
-                   return AnyView(ListsView())
+               /* MARK: future list implementation if necessary
+                case "Lists" :
+                   return AnyView(ListsView())*/
                case "Bookmarks":
                    return AnyView(BookmarksView())
                case "Messages":

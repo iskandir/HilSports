@@ -9,7 +9,9 @@ import Foundation
 
 enum SideMenuViewModel: Int, CaseIterable{
     case profile
+    /* MARK: future list implementation if necessary
     case lists
+    */
     case bookmarks
     case messages
     case notifications
@@ -18,7 +20,9 @@ enum SideMenuViewModel: Int, CaseIterable{
     var title: String {
         switch self {
             case .profile : return "Profile"
-            case .lists : return "Lists"
+            /* MARK: future list implementation if necessary
+             case .lists : return "Lists"
+             */
             case .bookmarks : return "Bookmarks"
             case .messages : return "Messages"
             case .notifications : return "Notifications"
@@ -29,7 +33,9 @@ enum SideMenuViewModel: Int, CaseIterable{
     var imageName : String {
         switch self {
             case .profile : return "person"
+            /* MARK: future list implementation if necessary
             case .lists : return "list.bullet"
+            */
             case .bookmarks : return "bookmark"
             case .messages : return "bubble.left"
             case .notifications : return "bell"
