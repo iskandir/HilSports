@@ -28,7 +28,7 @@ class UpdateUserData : ObservableObject{
                         } else {
                             //Set user information here
                             for document in querySnapshot!.documents{
-                                print("THIS IS: \(document.documentID) is \(document.data())")
+                                /* MARK: only for Debugging print("THIS IS: \(document.documentID) is \(document.data())")*/
                                 user.email = document.get("email") as! String
                                 
                             }

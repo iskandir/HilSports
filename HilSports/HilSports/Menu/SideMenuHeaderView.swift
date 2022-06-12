@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SideMenuHeaderView: View {
     @Binding var showingMenu : Bool
+    @EnvironmentObject var user : UserModel
     
     var body: some View {
         ZStack(alignment: .topTrailing){
@@ -25,6 +26,7 @@ struct SideMenuHeaderView: View {
             })
             
         VStack(alignment: .leading){
+            //Enter user Image
             Image(systemName: "lasso.sparkles")
                 .resizable()
                 .scaledToFit()
@@ -33,31 +35,32 @@ struct SideMenuHeaderView: View {
                 .clipShape(Circle())
                 .padding(.bottom, 16)
             
-            Text("My Name")
+            //Fullname - or name
+            Text("No Name entered")
                 .font(.system(size:24, weight: .semibold))
-            
-            Text("@myNick")
+            //Username
+            Text("@\(user.username)")
                 .font(.system(size:14))
                 .padding(.bottom,24)
             
-            HStack(spacing: 12){
+            HStack(){
                 HStack(spacing: 4){
                     Text("1234")
                         .bold()
-                    Text("Member")
+                    Text("visited activities")
                 }
                 HStack(spacing: 4){
                     Text("123")
                         .bold()
-                    Text("User")
+                    Text("People met")
                 }
-                Spacer()
+                
             }
             Spacer()
         }
         .foregroundColor(Color.white)
         .padding()
         }
-        
     }
 }
+

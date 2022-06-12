@@ -20,6 +20,7 @@ struct SideMenu: View {
                 //show SideMenuHeaderView
                 SideMenuHeaderView(showingMenu: $showingMenu)
                     .frame(height:240)
+                    .environmentObject(user)
                 
                 //Cell items
                 ForEach(SideMenuViewModel.allCases, id:\.self){option in

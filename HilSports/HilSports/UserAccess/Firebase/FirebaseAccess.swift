@@ -61,7 +61,6 @@ struct FirebaseAccess {
         }
             
     }
-    //TODO: RETURN FUCKING VALUE
     func doesEmailExist(email : String, completionHandler: @escaping CompletionHandler) {
         var userExistVar = false
        
@@ -77,7 +76,8 @@ struct FirebaseAccess {
                         } else {
                             for document in querySnapshot!.documents{
                                 userExistVar = true
-                                print("\(document.documentID) is \(document.data())")
+                                /* MARK: only for Debugging
+                                print("\(document.documentID) is \(document.data())")*/
                                 completionHandler(userExistVar)
                             }
                         }
@@ -85,7 +85,6 @@ struct FirebaseAccess {
                 }
         
         }
-    //TODO: RETURN FUCKING VALUE
     func doesUserExist(username : String, completionHandler: @escaping CompletionHandler) {
         var userExistVar = false
        
@@ -101,8 +100,10 @@ struct FirebaseAccess {
                         } else {
                             for document in querySnapshot!.documents{
                                 userExistVar = true
+                                /* MARK: Only for Debugging
                                 print("User \(username) does exist!")
                                 print("\(document.documentID) is \(document.data())")
+                                */
                                 completionHandler(userExistVar)
                             }
                         }

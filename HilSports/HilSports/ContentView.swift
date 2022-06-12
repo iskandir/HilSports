@@ -5,9 +5,11 @@ import SwiftUI
 struct ContentView: View {
 
     @State var showLoginView : Bool = false
-    @State var loggedUser : Bool = false
+    //set on true for no login view
+    @State var loggedUser : Bool = true
     
-    @StateObject private var user = UserModel(username: "", password: "", email: "")
+    //Default values for Debugging
+    @StateObject private var user = UserModel(username: "defaultName", password: "defaultPassword", email: "defaultEmail")
     
     var body: some View {
         if loggedUser == true {
