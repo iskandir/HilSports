@@ -13,6 +13,7 @@ struct SideMenuOptionView: View {
     
     var body: some View {
         HStack(spacing: 16){
+            //if user has any messages this will update the message counter
             if viewModel.title == "Messages" && messagesCount > 0
             {
                 ZStack{

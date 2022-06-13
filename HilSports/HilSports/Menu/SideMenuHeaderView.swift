@@ -45,14 +45,21 @@ struct SideMenuHeaderView: View {
             
             HStack(){
                 HStack(spacing: 4){
-                    Text("1234")
-                        .bold()
-                    Text("visited activities")
+                    VStack
+                    {
+                        Text("123")
+                            .bold()
+                        Text("People met")
+                    }
+                    
                 }
                 HStack(spacing: 4){
-                    Text("123")
-                        .bold()
-                    Text("People met")
+                    VStack
+                    {
+                        Text("1234")
+                            .bold()
+                        Text("visited activities")
+                    }
                 }
                 
             }

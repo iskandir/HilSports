@@ -36,6 +36,7 @@
 		3A9B1E2026DBACCD008AFBD6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E1F26DBACCD008AFBD6 /* LoginView.swift */; };
 		3A9B1E2326DCA0CF008AFBD6 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E2226DCA0CF008AFBD6 /* RegistrationView.swift */; };
 		3A9B1E2626DE6848008AFBD6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1E2526DE6848008AFBD6 /* UserModel.swift */; };
+		3ABD91612857E2EB00054146 /* EditUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABD91602857E2EB00054146 /* EditUserData.swift */; };
 		4EE18682A441CD15F67825F9 /* Pods_HilSports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81B89EAD6896377912F3411 /* Pods_HilSports.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		3A9B1E1F26DBACCD008AFBD6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3A9B1E2226DCA0CF008AFBD6 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		3A9B1E2526DE6848008AFBD6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		3ABD91602857E2EB00054146 /* EditUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserData.swift; sourceTree = "<group>"; };
 		41458ED035C3DF0F4896143B /* Pods-HilSports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HilSports.release.xcconfig"; path = "Target Support Files/Pods-HilSports/Pods-HilSports.release.xcconfig"; sourceTree = "<group>"; };
 		E81B89EAD6896377912F3411 /* Pods_HilSports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HilSports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -233,7 +235,7 @@
 		3A9B1E0726D985F8008AFBD6 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				3A9B1E0526D985EF008AFBD6 /* ProfileView.swift */,
+				3ABD915F2857DE7900054146 /* ProfileView */,
 				3A9B1E0826D98607008AFBD6 /* NotificationsView.swift */,
 				3A9B1E0C26D9862C008AFBD6 /* MessagesView.swift */,
 				3A9B1E0E26D9863E008AFBD6 /* LogoutView.swift */,
@@ -268,6 +270,15 @@
 				3A9B1E2226DCA0CF008AFBD6 /* RegistrationView.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		3ABD915F2857DE7900054146 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				3A9B1E0526D985EF008AFBD6 /* ProfileView.swift */,
+				3ABD91602857E2EB00054146 /* EditUserData.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		43F5F1AF53308972403203BA /* Pods */ = {
@@ -464,6 +475,7 @@
 				3A9B1DFD26D9851B008AFBD6 /* SideMenuViewModel.swift in Sources */,
 				3A9B1E0026D98540008AFBD6 /* CardView.swift in Sources */,
 				3A9B1E1526D9866B008AFBD6 /* BookmarksView.swift in Sources */,
+				3ABD91612857E2EB00054146 /* EditUserData.swift in Sources */,
 				3A9B1DFB26D98504008AFBD6 /* SideMenuOptionView.swift in Sources */,
 				3A9B1E0426D98567008AFBD6 /* FilterItem.swift in Sources */,
 				3A9B1E1126D98656008AFBD6 /* ListsView.swift in Sources */,
