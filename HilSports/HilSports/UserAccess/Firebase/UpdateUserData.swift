@@ -30,7 +30,13 @@ class UpdateUserData : ObservableObject{
                             for document in querySnapshot!.documents{
                                 /* MARK: only for Debugging print("THIS IS: \(document.documentID) is \(document.data())")*/
                                 user.email = document.get("email") as! String
-                                
+                                user.name = document.get("name") as! String
+                                user.age = document.get("age") as! String
+                                user.favSports = document.get("favSports") as! [String]
+                                user.aboutYou = document.get("aboutyou") as! String
+                                //user.image = document.get("image") as! String
+                                user.peopleMet = document.get("peopleMet") as! Int
+                                user.visitedActivities = document.get("visitedActivities") as! Int
                             }
                         }
                     }

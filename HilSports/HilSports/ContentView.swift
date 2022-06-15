@@ -6,10 +6,10 @@ struct ContentView: View {
 
     @State var showLoginView : Bool = false
     //set on true for no login view
-    @State var loggedUser : Bool = true
+    @State var loggedUser : Bool = false
     
     //Default values for Debugging
-    @StateObject private var user = UserModel(username: "defaultName", password: "defaultPassword", email: "defaultEmail")
+    @StateObject private var user = UserModel(username: "defaultUsername", password: "defaultPassword", email: "defaultEmail", name: "defaultName", age: "defaultAge", favSports: ["defaultSoccer", "defaultYoga"], peopleMet: 0, visitedActivities: 0)
     
     var body: some View {
         if loggedUser == true {

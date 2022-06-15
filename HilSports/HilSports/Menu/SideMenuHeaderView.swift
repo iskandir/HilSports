@@ -11,6 +11,7 @@ struct SideMenuHeaderView: View {
     @Binding var showingMenu : Bool
     @EnvironmentObject var user : UserModel
     
+    //TODO: Change this view to a visitcard view!
     var body: some View {
         ZStack(alignment: .topTrailing){
             Button(action:{
@@ -26,7 +27,7 @@ struct SideMenuHeaderView: View {
             })
             
         VStack(alignment: .leading){
-            //Enter user Image
+            //TODO: Enter user image
             Image(systemName: "lasso.sparkles")
                 .resizable()
                 .scaledToFit()
@@ -36,18 +37,19 @@ struct SideMenuHeaderView: View {
                 .padding(.bottom, 16)
             
             //Fullname - or name
-            Text("No Name entered")
+            Text("\(user.name)")
                 .font(.system(size:24, weight: .semibold))
             //Username
             Text("@\(user.username)")
                 .font(.system(size:14))
                 .padding(.bottom,24)
             
+            //TODO: If user met > 1k People or more then 1k activities change number to x.xK
             HStack(){
                 HStack(spacing: 4){
                     VStack
                     {
-                        Text("123")
+                        Text("\(user.peopleMet)")
                             .bold()
                         Text("People met")
                     }
@@ -56,7 +58,7 @@ struct SideMenuHeaderView: View {
                 HStack(spacing: 4){
                     VStack
                     {
-                        Text("1234")
+                        Text("\(user.visitedActivities)")
                             .bold()
                         Text("visited activities")
                     }

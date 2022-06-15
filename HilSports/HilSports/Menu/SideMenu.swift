@@ -55,7 +55,7 @@ struct SideMenu: View {
                case "Notifications":
                    return AnyView(NotificationsView())
                case "Logout":
-                   return AnyView(LogoutView())
+                   return AnyView(ContentView())
                default:
                    return AnyView(Error())
                }

@@ -140,5 +140,25 @@ struct FirebaseAccess {
                 print("test")
             }
         }
-    }    
+    }
+    //TODO: save sportitems into an array
+    func getSportItems() -> [String]
+    {
+        var sportsArray = [""]
+        print("Start getSportsItems()")
+        
+        db.collection("databaseStatistics").getDocuments(){(querySnapshot, error) in
+            if let error = error {
+                print("Error occured \(error)")
+            } else {
+                for document in querySnapshot!.documents
+                {
+                    print("\(document.documentID): \(document.data())")
+                    print("\(document.data().count)")
+                }
+            }
+        }
+        
+        return sportsArray
+    }
 }

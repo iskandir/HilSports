@@ -16,16 +16,17 @@ struct ProfileView: View {
         {
             Header()
             ProfileText()
+                
         }
         Spacer()
         Button(
             action: { self.editProfile = true},
             label: {
-                Label("Edit", systemImage: "pencil")
+                Label("Edit Profile", systemImage: "pencil")
             })
         .padding()
         .sheet(isPresented: $editProfile, content: {
-            EditUserData()
+            EditUserData().environmentObject(user)
         })
     }
 }
@@ -34,6 +35,9 @@ struct ProfileText : View
 {
     
     @EnvironmentObject var user : UserModel
+    @State var age = 3;
+    @State var sports = ""
+    
     var body : some View
     {
         VStack(spacing: 15)
@@ -43,15 +47,43 @@ struct ProfileText : View
                 Text("\(user.username)")
                     .bold()
                     .font(.title)
-                Text("\(user.email)")
+                Text("@\(user.email)")
                     .font(.body)
                     .foregroundColor(.secondary)
             }.padding()
-            Text("Description")
-                .multilineTextAlignment(.center)
+        }
+        Text("\(user.aboutYou)")
+            .multilineTextAlignment(.trailing)
+            .frame(maxHeight: .infinity, alignment: .topLeading)
+            .padding()
+        HStack
+        {
+            Text("Age: ")
                 .padding()
             Spacer()
+            if Int(user.age) ?? 0 < 2
+            {
+                Text("\(user.age) year old")
+                    .padding()
+            } else
+            {
+                Text("\(user.age) years old")
+                    .padding()
+            }
+            
+            
         }
+        HStack
+        {
+            Text("Favorite Sports")
+                .padding()
+            Spacer()
+            Text(user.favSports.joined(separator: ", "))
+                .multilineTextAlignment(.trailing)
+                .padding()
+        }
+        
+        Spacer()
     }
 }
 
@@ -69,12 +101,5 @@ struct Header : View
                         .overlay(Circle().stroke(Color.white, lineWidth: 4))
                         .shadow(radius: 10)
         }
-    }
-}
-
-
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
     }
 }
